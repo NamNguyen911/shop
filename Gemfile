@@ -55,3 +55,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "slim-rails"
 gem 'rails_admin', '~> 1.1.1'
 gem "paperclip", "~> 5.0.0"
+gem 'cancancan', '~> 1.10'
+gem 'devise'
+gem 'enumerize'
