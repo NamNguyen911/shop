@@ -1,5 +1,6 @@
 - @products.each do |prod|
   .product
-    .name #{prod.name}
+    .name
+      a href="#{product_path(prod)}" #{prod.name}
     .description #{prod.description}
     .price #{prod.price}
