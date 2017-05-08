@@ -7,5 +7,6 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @order_item = @product.order_items.new()
   end
 end

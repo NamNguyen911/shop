@@ -1,2 +1,8 @@
 h1 Checkout
 p #{@current_order.status}
+p #{@current_order.order_items.count}
+
+- @current_order.order_items.each do |item|
+  .product
+    .name #{item.product.name}
+    .quantity #{item.quantity}
