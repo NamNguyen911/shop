@@ -1,0 +1,17 @@
+.row
+  .col
+    h4 = product.name
+  .col
+    = simple_form_for order_item, remote: true do |f| 
+      h4
+        | Unit price: 
+        span = order_item.unit_price
+      .row
+        .col
+          = f.input :quantity
+        .col
+          = f.submit "Update"
+          = link_to "Delete", order_item, { data: { confirm: "Are you sure you wish to delete the product '#{order_item.product.name}' from your cart?" } , method: :delete, remote: true }
+      h4
+        | Total Price
+        span = order_item.total_price

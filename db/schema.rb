@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170508082320) do
+ActiveRecord::Schema.define(version: 20170512012046) do
 
   create_table "order_items", force: :cascade do |t|
     t.integer  "product_id"
@@ -30,6 +30,9 @@ ActiveRecord::Schema.define(version: 20170508082320) do
     t.datetime "updated_at",                            null: false
     t.integer  "oder_item_id"
     t.decimal  "total",        precision: 12, scale: 3
+    t.decimal  "sub_total",    precision: 12, scale: 3
+    t.decimal  "tax",          precision: 12, scale: 3
+    t.decimal  "shipping",     precision: 12, scale: 3
     t.index ["oder_item_id"], name: "index_orders_on_oder_item_id"
   end
 

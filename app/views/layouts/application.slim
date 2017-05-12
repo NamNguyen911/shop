@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title Sweetsugar
+    = csrf_meta_tag
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  body
+    .home
+      = link_to "You got me", root_path
+    .cart
+      = render 'layouts/cart_text'
+    = yield

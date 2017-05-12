@@ -5,6 +5,6 @@
   / add to cart - current order
   / migrate order to add field total, has many products
   = simple_form_for @order_item do |f|
-    = f.input :quantity
+    = f.input :quantity, label: "Số lượng"
     = f.input :product_id, as: :hidden
-    = f.button :submit, "Add to Cart"
+    = f.button :submit, "Thêm vào giỏ hàng"
