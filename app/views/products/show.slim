@@ -4,7 +4,7 @@
 
   / add to cart - current order
   / migrate order to add field total, has many products
-  = simple_form_for @order_item do |f|
+  = simple_form_for @order_item, remote: true do |f|
     = f.input :quantity, label: "Số lượng"
     = f.input :product_id, as: :hidden
-    = f.button :submit, "Thêm vào giỏ hàng"
+    = f.submit "Thêm vào giỏ hàng"
