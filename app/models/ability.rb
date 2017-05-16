@@ -32,10 +32,11 @@ class Ability
     user ||= User.new # guest user (not logged in)
     if user.admin?
       can :manage, :all
+    elsif user.operator?
+      can :read, Product
+      can [:fulfill, :read], Order
     else
       can :read, Product
-      can :read, Order
-      can :fulfill, Order
     end
   end
 end

@@ -7,6 +7,13 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body
+    .header
+      - if user_signed_in?
+        .user
+          p = current_user.email
+        = link_to "Đăng xuất", destroy_user_session_path, method: :delete
+      - else
+        = link_to "Đăng nhập", new_user_session_path
     .home
       = link_to "You got me", root_path
       = link_to "Đơn hàng", orders_path

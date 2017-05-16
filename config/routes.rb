@@ -18,5 +18,9 @@ Rails.application.routes.draw do
   resources :products
 
   devise_for :users
+  # devise_scope :user do
+  #   get 'sign_in', to: 'devise/sessions#new'
+  # end
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 end

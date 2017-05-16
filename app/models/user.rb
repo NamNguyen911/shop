@@ -5,5 +5,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  enumerize :role, in: [:admin, :user], default: :user, predicates: true
+  enumerize :role, in: [:admin, :user, :operator], default: :user, predicates: true
 end
