@@ -12,6 +12,10 @@ class Order < ApplicationRecord
     order_items.collect { |oi| oi.valid? ? (oi.quantity * oi.unit_price) : 0 }.sum
   end
 
+  def available
+    order_items.all? { |oi| oi.quantity <= oi.product.quantity }
+  end
+
   private
 
   def update_subtotal
