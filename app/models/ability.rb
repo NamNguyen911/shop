@@ -34,6 +34,7 @@ class Ability
       can :manage, :all
     else
       can :read, Product
+      can :read, Order
     end
   end
 end
