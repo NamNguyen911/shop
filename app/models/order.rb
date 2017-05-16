@@ -3,6 +3,7 @@ class Order < ApplicationRecord
   enumerize :status, in: [:progressing, :placed, :shipped, :cancelled],
     default: :progressing, predicates: true
 
+  belongs_to :guest
   has_many :order_items
 
   before_save :update_subtotal

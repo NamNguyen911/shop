@@ -1,0 +1,5 @@
+= simple_form_for @guest, url: carts_confirm_path do |f|
+  = f.input :name, label: "Họ và tên"
+  = f.input :address, label: "Địa chỉ"
+  = f.input :phone_number, label: "Số điện thoại"
+  = f.submit "Gửi"
