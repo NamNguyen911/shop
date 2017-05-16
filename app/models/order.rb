@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
   extend Enumerize
-  enumerize :status, in: [:progressing, :placed, :shipped, :cancelled],
-    default: :progressing, predicates: true
+  enumerize :status, in: [:processing, :placed, :shipped, :cancelled],
+    default: :processing, predicates: true
 
   belongs_to :guest
   has_many :order_items

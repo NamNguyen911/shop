@@ -1,5 +1,6 @@
 - @orders.each do |o|
-  = link_to "Order detail", order_path(o)
+  - if o.processing?
+    = link_to "Xử lý đơn hàng", fulfill_order_path(o)
   p.id = o.id
   p.status = o.status
   p.created = o.created_at

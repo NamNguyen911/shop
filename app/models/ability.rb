@@ -35,6 +35,7 @@ class Ability
     else
       can :read, Product
       can :read, Order
+      can :fulfill, Order
     end
   end
 end

@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   get 'thank_you', to: 'home#thank_you'
 
-  resources :orders, only: [:index, :show]
+  resources :orders, only: [:index] do
+    get 'fulfill', on: :member
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
