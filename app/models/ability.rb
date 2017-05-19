@@ -33,9 +33,11 @@ class Ability
     if user.admin?
       can :manage, :all
     elsif user.operator?
+      can :read, Category
       can :read, Product
       can [:fulfill, :read], Order
     else
+      can :read, Category
       can :read, Product
     end
   end

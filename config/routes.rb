@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'categories/show'
+
   resources :order_items, only: [:create, :update, :destroy]
 
   get 'carts/show'
@@ -10,6 +12,8 @@ Rails.application.routes.draw do
   resources :orders, only: [:index] do
     get 'fulfill', on: :member
   end
+
+  resources :categories, only: [:show]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 

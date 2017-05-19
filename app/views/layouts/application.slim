@@ -14,6 +14,12 @@ html
         = link_to "Đăng xuất", destroy_user_session_path, method: :delete
       - else
         = link_to "Đăng nhập", new_user_session_path
+    .category
+      ul
+        - categories.each do |c|
+          li
+            = link_to c.name, category_path(c)
+      
     .home
       = link_to "You got me", root_path
       = link_to "Đơn hàng", orders_path
