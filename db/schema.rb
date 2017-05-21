@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20170519201549) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -34,22 +37,20 @@ ActiveRecord::Schema.define(version: 20170519201549) do
     t.decimal  "total_price", precision: 12, scale: 3
     t.datetime "created_at",                           null: false
     t.datetime "updated_at",                           null: false
-    t.index ["order_id"], name: "index_order_items_on_order_id"
-    t.index ["product_id"], name: "index_order_items_on_product_id"
+    t.index ["order_id"], name: "index_order_items_on_order_id", using: :btree
+    t.index ["product_id"], name: "index_order_items_on_product_id", using: :btree
   end
 
   create_table "orders", force: :cascade do |t|
     t.string   "status"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
-    t.integer  "oder_item_id"
-    t.decimal  "total",        precision: 12, scale: 3
-    t.decimal  "sub_total",    precision: 12, scale: 3
-    t.decimal  "tax",          precision: 12, scale: 3
-    t.decimal  "shipping",     precision: 12, scale: 3
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.decimal  "total",      precision: 12, scale: 3
+    t.decimal  "sub_total",  precision: 12, scale: 3
+    t.decimal  "tax",        precision: 12, scale: 3
+    t.decimal  "shipping",   precision: 12, scale: 3
     t.integer  "guest_id"
-    t.index ["guest_id"], name: "index_orders_on_guest_id"
-    t.index ["oder_item_id"], name: "index_orders_on_oder_item_id"
+    t.index ["guest_id"], name: "index_orders_on_guest_id", using: :btree
   end
 
   create_table "products", force: :cascade do |t|
@@ -60,7 +61,7 @@ ActiveRecord::Schema.define(version: 20170519201549) do
     t.decimal  "price"
     t.integer  "quantity",    default: 0
     t.integer  "category_id"
-    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["category_id"], name: "index_products_on_category_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -77,8 +78,12 @@ ActiveRecord::Schema.define(version: 20170519201549) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "role"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "order_items", "orders"
+  add_foreign_key "order_items", "products"
+  add_foreign_key "orders", "guests"
+  add_foreign_key "products", "categories"
 end
