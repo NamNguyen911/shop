@@ -8,8 +8,9 @@
 #hero.owl-carousel
   - @categories.each do |cat|
     .slide
-      = link_to categories_show_path(cat) do
-        img.image src="/assets/img/slides/5.jpg"
+      = link_to category_path(cat) do
+        /img.image src="/assets/img/slides/5.jpg"
+        = image_tag cat.photo.url(:medium), class: 'image'
         .info
           .title = cat.slogan
           .description = cat.description

@@ -61,3 +61,4 @@ gem 'simple_form'
 
 # gem 'sqlite3'
 gem 'mysql2'
+gem "paperclip", "~> 5.0.0"

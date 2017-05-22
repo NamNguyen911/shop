@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'categories/show'
-
   resources :order_items, only: [:create, :update, :destroy]
 
   get 'carts/show'
