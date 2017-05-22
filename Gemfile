@@ -59,4 +59,5 @@ gem 'devise'
 gem 'enumerize'
 gem 'simple_form'
 
-gem 'pg'
+# gem 'sqlite3'
+gem 'mysql2'

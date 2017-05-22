@@ -39,6 +39,7 @@ class Ability
     else
       can :read, Category
       can :read, Product
+      can :add, Product
     end
   end
 end

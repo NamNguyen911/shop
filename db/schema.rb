@@ -12,16 +12,13 @@
 
 ActiveRecord::Schema.define(version: 20170519201549) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "categories", force: :cascade do |t|
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "guests", force: :cascade do |t|
+  create_table "guests", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "address"
     t.string   "phone_number"
@@ -29,7 +26,7 @@ ActiveRecord::Schema.define(version: 20170519201549) do
     t.datetime "updated_at",   null: false
   end
 
-  create_table "order_items", force: :cascade do |t|
+  create_table "order_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "product_id"
     t.integer  "order_id"
     t.decimal  "unit_price",  precision: 12, scale: 3
@@ -41,7 +38,7 @@ ActiveRecord::Schema.define(version: 20170519201549) do
     t.index ["product_id"], name: "index_order_items_on_product_id", using: :btree
   end
 
-  create_table "orders", force: :cascade do |t|
+  create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "status"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
@@ -53,18 +50,18 @@ ActiveRecord::Schema.define(version: 20170519201549) do
     t.index ["guest_id"], name: "index_orders_on_guest_id", using: :btree
   end
 
-  create_table "products", force: :cascade do |t|
+  create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.text     "description"
-    t.decimal  "price"
-    t.integer  "quantity",    default: 0
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
+    t.text     "description", limit: 65535
+    t.decimal  "price",                     precision: 10
+    t.integer  "quantity",                                 default: 0
     t.integer  "category_id"
     t.index ["category_id"], name: "index_products_on_category_id", using: :btree
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

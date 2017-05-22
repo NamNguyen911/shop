@@ -19,7 +19,9 @@ Rails.application.routes.draw do
 
   root 'products#index'
 
-  resources :products
+  resources :products do
+    get 'add', on: :member
+  end
 
   devise_for :users
   # devise_scope :user do

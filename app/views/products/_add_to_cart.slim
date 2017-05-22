@@ -1,0 +1,5 @@
+= simple_form_for order_item, remote: true do |f|
+  = f.input :quantity, label: "Số lượng"
+  = f.input :product_id, as: :hidden
+  = f.submit "Thêm vào giỏ hàng"
+
