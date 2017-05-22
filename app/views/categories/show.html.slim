@@ -1,6 +1,8 @@
-h1 = @category.name
+/h1 = @category.name
 
-ul
+/ul
   - @category.products.each do |item|
     li
       = link_to item.name, product_path(item)
+
+= render 'products/list_products', products: @category.products
