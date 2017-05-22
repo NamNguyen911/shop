@@ -6,19 +6,26 @@
     .price #{prod.price}
 
 #hero.owl-carousel
-  .slide
+  - @categories.each do |cat|
+    .slide
+      = link_to categories_show_path(cat) do
+        img.image src="/assets/img/slides/5.jpg"
+        .info
+          .title = cat.slogan
+          .description = cat.description
+  /.slide
     a href="#"
       img.image src="/assets/img/slides/5.jpg"
       .info
         .title June Sexy Babe
         .description Công thức mix đồ nhấn nhá riêng biệt phá đảo mùa hè 2017 cho cô nàng gợi cảm.
-  .slide
+  /.slide
     a href="#"
       img.image src="/assets/img/slides/6.jpg"
       .info
         .title Pure Feels
         .description Cho chàng thấy bạn mong manh đến nhường nào.
-  .slide
+  /.slide
     a href="#"
       img.image src="/assets/img/slides/7.jpg"
       .info
