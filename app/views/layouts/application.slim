@@ -8,6 +8,7 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     link rel="stylesheet" type="text/css" href="/assets/css/index.css"
+    = yield :css
 
   body
     section#header
@@ -44,8 +45,10 @@ html
       = link_to "Đơn hàng", orders_path
     /.cart-text
       = render 'layouts/cart_text'
+
     section#content
-      = yield
+      = yield :breadcrumbs
+      = yield :content
 
     section#footer
       .menu-bar
@@ -100,3 +103,4 @@ html
     script src="/assets/bower/fastclick/lib/fastclick.js"
     script src="/assets/bower/owl.carousel/dist/owl.carousel.min.js"
     script src="/assets/js/index.js"
+    = yield :js

@@ -3,10 +3,11 @@ $medium-logo-height: 60px
 $small-logo-height: 50px
 
 html,
-body
+body,
+h1, h2, h3, h4, h5
   font-family: 'Roboto Mono', monospace
   font-family: 'Montserrat', sans-serif
-  letter-spacing: 1px
+  letter-spacing: .05em
 
 a
   color: black
@@ -29,6 +30,12 @@ a
       color: black
       background-color: $primary-color
       border-color: $primary-color
+
+.container
+  &.page
+    padding: 30px 0
+    @media #{$large}
+      padding: 40px 0
 
 #toolbar
   $size: 50px
@@ -77,7 +84,6 @@ a
       .spinner
         display: inline
 
-
 #header
   border-bottom: 1px solid rgba(black, .1)
   padding: 15px 0
@@ -121,7 +127,98 @@ a
     span.fa
       font-size: 20px
 
+#side-bar
+  .box
+    margin-bottom: 25px
+    @media #{$large}
+      margin-bottom: 40px
+    .caption
+      font-size: 14px
+      font-weight: bold
+      text-transform: uppercase
+      &:after
+        content: ''
+        display: block
+        width: 60px
+        border-bottom: 2px solid black
+        margin: 20px 0 25px 0
+    .content
+      font-size: 13px
+    p
+      font-size: 13px
+      color: #555
+      a
+        font-weight: bold
+    ul.categories
+      font-size: 0
+      li
+        font-size: 13px
+        margin-bottom: 3px
+      span.counter
+        margin-left: 10px
+        float: right
+        font-weight: bold
+
+#categories
+  ul.categories
+    margin: 0
+    padding: 0
+    list-style: none
+    text-align: center
+    > li
+      display: inline-block
+      margin-bottom: 12px
+      &:not(:last-child)
+        margin-right: 12px
+    a
+      display: block
+      font-weight: bold
+      text-transform: uppercase
+      font-size: 12px
+      padding: 10px 15px
+      border: 2px solid black
+      color: black
+      transition: all .3s ease-in-out
+      &:hover
+        color: black
+        background-color: $primary-color
+        border-color: $primary-color
+      &:before
+        content: '#'
+        margin-right: 5px
+      .counter
+        margin-left: 8px
+        &:before
+          content: '('
+        &:after
+          content: ')'
+
+#breadcrumbs
+  padding: 12px 0
+  border-bottom: 1px solid rgba(black, .05)
+  ul
+    margin: 0
+
 #content
+  .pagination
+    a
+      border-radius: 0
+  h1.title
+    font-size: 24px
+    font-weight: bold
+    text-transform: uppercase
+    margin: 0
+    &:after
+      content: ''
+      display: block
+      width: 60px
+      border-bottom: 2px solid black
+      margin: 20px 0
+  .note
+    margin: 10px 0
+    font-size: 13px
+    font-style: italic
+    color: #999
   .block
     padding: 30px 0
   .block-title
@@ -129,7 +226,7 @@ a
     text-transform: uppercase
     text-align: center
     font-size: 20px
-    letter-spacing: .4em
+    letter-spacing: .25em
     margin-bottom: 20px
     @media #{$medium}
       font-size: 24px
@@ -302,11 +399,13 @@ a
     text-transform: uppercase
     font-weight: bold
     font-size: 14px
-    letter-spacing: .4em
-    padding-bottom: 10px
-    border-bottom: 1px solid #222
     display: inline-block
-    margin-bottom: 20px
+    &:after
+      content: ''
+      border-bottom: 2px solid #222
+      display: block
+      width: 60px
+      margin: 20px 0 25px 0
   .block-content
     margin-bottom: 20px
   ul.menu
@@ -316,6 +415,7 @@ a
       font-size: 13px
       letter-spacing: .1em
       color: #777
+      margin-bottom: 3px
       strong
         color: white
     a
