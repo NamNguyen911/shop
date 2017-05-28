@@ -29,6 +29,16 @@
   
   /= render 'products/list_products', products: @products
   
+  #categories.block
+    .row
+      .column
+        ul.categories
+          - @categories.each do |cat|
+            li
+              a href="#{category_path(cat)}"
+                | #{cat.name}
+                span.counter = cat.products.size
+
   #featured.block
     .row
       .column
