@@ -640,12 +640,12 @@ $crumb-link-decor: none;
 
 // We use these to style the labels in different ways
 // $form-label-pointer: pointer;
-// $form-label-font-size: rem-calc(14);
+$form-label-font-size: rem-calc(13);
 // $form-label-font-weight: $font-weight-normal;
 // $form-label-line-height: 1.5;
 $form-label-font-color: black;
 // $form-label-small-transform: capitalize;
-// $form-label-bottom-margin: 0;
+$form-label-bottom-margin: 0;
 // $input-font-family: inherit;
 $input-font-color: black;
 $input-font-size: rem-calc(13);
@@ -1295,8 +1295,8 @@ $pagination-link-current-background: $primary-color;
 // $include-html-table-classes: $include-html-classes;
 
 // These control the background color for the table and even rows
-// $table-bg: $white;
-// $table-even-row-bg: $snow;
+$table-bg: white;
+$table-even-row-bg: white;
 
 // These control the table cell border style
 // $table-border-style: solid;

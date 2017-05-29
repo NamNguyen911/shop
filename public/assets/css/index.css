@@ -3398,7 +3398,7 @@ label {
   color: black;
   cursor: pointer;
   display: block;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: normal;
   line-height: 1.5;
   margin-bottom: 0;
@@ -3426,7 +3426,7 @@ label small {
   border-style: solid;
   border-width: 1px;
   display: block;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   height: 2.25rem;
   line-height: 2.25rem;
   overflow: visible;
@@ -5856,7 +5856,7 @@ ul.pagination li {
 }
 
 table {
-  background: #FFFFFF;
+  background: white;
   border: solid 1px #DDDDDD;
   margin-bottom: 1.25rem;
   table-layout: auto;
@@ -5902,7 +5902,7 @@ table tr td {
 }
 
 table tr.even, table tr.alt, table tr:nth-of-type(even) {
-  background: #F9F9F9;
+  background: white;
 }
 
 table thead tr th,
@@ -8720,6 +8720,14 @@ h1, h2, h3, h4, h5 {
   letter-spacing: .05em;
 }
 
+label {
+  letter-spacing: 0;
+}
+
+label > input[type=text], label input[type=email], label input[type=number], label select, label textarea {
+  margin-top: 5px;
+}
+
 a {
   color: black;
   transition: color .3s ease-in-out;
@@ -8729,7 +8737,7 @@ a:hover {
   color: #fec41e;
 }
 
-a.ghost-button {
+a.ghost-button, button.ghost-button {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 14px;
@@ -8738,20 +8746,31 @@ a.ghost-button {
   border: 2px solid black;
   color: black;
   transition: all .3s ease-in-out;
+  background-color: transparent;
 }
 
-a.ghost-button.light {
+a.ghost-button.small, button.ghost-button.small {
+  font-size: 12px;
+  padding: 9px 15px;
+}
+
+a.ghost-button.light, button.ghost-button.light {
   color: white;
   border-color: white;
 }
 
-a.ghost-button.actived, a.ghost-button:hover {
+a.ghost-button.actived, a.ghost-button:hover, button.ghost-button.actived, button.ghost-button:hover {
   color: black;
   background-color: #fec41e;
   border-color: #fec41e;
 }
 
-button.submit-to-cart {
+button.checkout, .button.checkout {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+button.submit-to-cart, .button.submit-to-cart {
   background-color: transparent;
   color: black;
   border: 2px solid black;
@@ -8763,7 +8782,7 @@ button.submit-to-cart {
   transition: all .3s ease-in-out;
 }
 
-button.submit-to-cart:hover {
+button.submit-to-cart:hover, .button.submit-to-cart:hover {
   background-color: #fec41e;
   border-color: #fec41e;
 }
@@ -8800,6 +8819,102 @@ button.submit-to-cart:hover {
 
 .tabs-content p {
   font-size: 13px;
+}
+
+#cart {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+#cart.checkout td {
+  padding: 9px;
+}
+
+#cart td {
+  padding: 8px 3px;
+  border-top: 1px solid #eee;
+}
+
+#cart input.quantity {
+  display: inline-block;
+  width: 60px;
+  margin: 0;
+}
+
+#cart .price {
+  text-align: right;
+  font-size: 13px;
+}
+
+#cart .price span {
+  display: block;
+}
+
+#cart .price span.total {
+  font-weight: bold;
+}
+
+#cart .price span.old {
+  color: #ddd;
+  text-decoration: line-through;
+}
+
+#cart thead th {
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 10px 9px;
+  border-bottom: 1px solid #ddd;
+}
+
+#cart tfoot td {
+  border-top: 1px solid #ddd;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 9px;
+  background-color: white;
+}
+
+#cart .remove {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 20px;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: 0;
+  background-color: black;
+  color: white;
+  transition: none;
+}
+
+#cart .remove:hover {
+  background-color: #f04124;
+  color: white;
+}
+
+#cart .name {
+  font-size: 13px;
+}
+
+#cart .name:hover {
+  color: black;
+}
+
+#cart .image {
+  width: 64px;
+}
+
+#cart .image > a {
+  display: block;
+  background-color: #f0f0f0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 0;
+  padding-top: 100%;
 }
 
 #toolbar {
@@ -9102,6 +9217,13 @@ button.submit-to-cart:hover {
     font-size: 24px;
     margin-bottom: 30px;
   }
+}
+
+#content .block-sub-title {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 13px;
+  margin: 15px 0;
 }
 
 #content .product-detail {

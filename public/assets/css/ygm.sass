@@ -7,11 +7,18 @@ body,
 h1, h2, h3, h4, h5
   letter-spacing: .05em
 
+label
+  letter-spacing: 0
+  > input[type=text], input[type=email], input[type=number], select, textarea
+    margin-top: 5px
+
 a
   color: black
   transition: color .3s ease-in-out
   &:hover
     color: $primary-color
+
+a, button
   &.ghost-button
     text-transform: uppercase
     font-weight: bold
@@ -21,6 +28,10 @@ a
     border: 2px solid black
     color: black
     transition: all .3s ease-in-out
+    background-color: transparent
+    &.small
+      font-size: 12px
+      padding: 9px 15px
     &.light
       color: white
       border-color: white
@@ -29,7 +40,10 @@ a
       background-color: $primary-color
       border-color: $primary-color
 
-button
+button, .button
+  &.checkout
+    font-size: 13px
+    font-weight: bold
   &.submit-to-cart
     background-color: transparent
     color: black
@@ -66,6 +80,75 @@ button
     font-size: 18px
   p
     font-size: 13px
+
+#cart
+  border-collapse: collapse
+  width: 100%
+  margin-bottom: 25px
+  &.checkout
+    td
+      padding: 9px
+  td
+    padding: 8px 3px
+    border-top: 1px solid #eee
+  input.quantity
+    display: inline-block
+    width: 60px
+    margin: 0
+  .price
+    text-align: right
+    font-size: 13px
+    span
+      display: block
+      &.total
+        font-weight: bold
+      &.old
+        color: #ddd
+        text-decoration: line-through
+  thead
+    th
+      text-transform: uppercase
+      font-size: 12px
+      padding: 10px 9px
+      border-bottom: 1px solid #ddd
+  tfoot
+    td
+      border-top: 1px solid #ddd
+      text-transform: uppercase
+      font-size: 12px
+      padding: 9px
+      background-color: white
+  .remove
+    $size: 20px
+    display: inline-block
+    width: $size
+    height: $size
+    line-height: $size
+    border-radius: $size
+    font-size: 15px
+    text-align: center
+    letter-spacing: 0
+    background-color: black
+    color: white
+    transition: none
+    &:hover
+      background-color: $alert-color
+      color: white
+  .name
+    font-size: 13px
+    &:hover
+      color: black
+  .image
+    width: 64px
+    > a
+      display: block
+      background-color: #f0f0f0
+      background-repeat: no-repeat
+      background-position: center
+      background-size: cover
+      width: 100%
+      height: 0
+      padding-top: 100%
 
 #toolbar
   $size: 50px
@@ -266,6 +349,11 @@ button
     @media #{$medium}
       font-size: 24px
       margin-bottom: 30px
+  .block-sub-title
+    font-weight: bold
+    text-transform: uppercase
+    font-size: 13px
+    margin: 15px 0
   .product-detail
     font-size: 14px
     .json

@@ -1,2 +1,68 @@
 .shopping-cart
   = render 'shopping_cart'
+
+- content_for :breadcrumbs
+  #breadcrumbs
+    .container
+      .row
+        .column
+          nav role="natigation"
+            ul.breadcrumbs
+              li
+                = link_to root_path do
+                  span.fa.fa-home
+              li
+                = link_to "Giỏ hàng", "#"
+
+- content_for :content
+  .container.page
+    .row
+      .column
+        .listing
+          h1.title Giỏ hàng
+
+          form(action="/checkout.html")
+            table#cart
+              thead
+                tr
+                  th colspan="3" Sản phẩm
+                  th.text-right Đơn giá
+                  th.text-right Số lượng
+                  th.text-right Tổng cộng
+              tbody
+                tr
+                  td
+                    a.remove href="#" &times;
+                  td.image
+                    a.image href="/detail.html" style="background-image: url(/assets/img/products/1.jpg)"
+                  td
+                    a.name href="/detail.html" Set đồ lót ren không gọng mút
+                  td.price
+                    span.old 299000
+                    span.current 199000
+                  td.text-right
+                    input.quantity type="number" value="1" placeholder="Nhập số lượng"
+                  td.price
+                    span.total 199000
+              tfoot
+                tr
+                  td colspan="5" Tổng đơn hàng
+                  td.price 199000
+
+            .row
+              .column.medium-7
+                .row.collapse
+                  .column.small-5
+                    input type="text" placeholder="Mã giảm giá"
+                  .column.small-7
+                    button.ghost-button.small type="submit"
+                      span.fa.fa-ticket style="margin-right: 5px"
+                      | Dùng mã giảm giá
+              .column.medium-5.text-right
+                button.ghost-button.small type="submit"
+                  span.fa.fa-refresh style="margin-right: 5px"
+                  | Cập nhật đơn hàng
+
+            .row
+              .column.text-right
+                a.button.checkout href="/checkout.html" Tiến hành thanh toán
