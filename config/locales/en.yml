@@ -21,3 +21,25 @@
 
 en:
   hello: "Hello world"
+
+  about: "About"
+  guide: 'Guide'
+  term: "Term"
+  policy: "Policy"
+  sitemaps: "Sitemaps"
+  more_infor: "Information"
+
+  copyright: "Bản quyền thuộc về YGM. Mã số doanh nghiệp: 0106773786 do Sở Kế hoạch &amp; Đầu tư TP Hà Nội cấp lần đầu ngày 10/02/2015"
+
+  contact: "Contact"
+
+  phone: "Phone Number"
+  phone_number: "0125.5239.480"
+  contact_number: "0125.5239.480"
+  click_to_call: "tel://+841255239480"
+
+  address_label: "Address"
+  address_detail: "181 Xã Đàn 2, Nam Đồng, Đống Đa, Hà Nội"
+
+  support_email: "support@gym.vn"
+  click_to_email: "mailto:support@ygm.vn"

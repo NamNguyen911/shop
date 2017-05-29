@@ -1,0 +1,34 @@
+.menu-bar
+  .row
+    .column.medium-6.large-4
+      .block-title = t('contact')
+      .block-content
+        ul.menu
+          li
+            strong #{t('phone')}:&nbsp;
+            a href="#{t('click_to_call')}" = t('phone_number')
+          li
+            strong #{t('address_label')}:&nbsp;
+            | #{t('address_detail')}
+          li
+            strong Email:&nbsp;
+            a href="#{t('click_to_email')}" = t('support_email')
+    .column.medium-6.large-4
+      .block-title = t('more_infor')
+      .block-content
+        ul.menu
+          li
+            a href="#" = t('about')
+          li
+            a href="#" = t('guide')
+          li
+            a href="#" = t('term')
+          li
+            a href="#" = t('policy')
+          li
+            a href="#" = t('sitemaps')
+    .column.medium-6.large-4
+      .block-title YGM Facebook
+      .block-content
+        iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"
+.copyright-bar = t('copyright')

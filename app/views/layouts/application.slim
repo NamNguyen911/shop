@@ -51,42 +51,7 @@ html
       = yield :content
 
     section#footer
-      .menu-bar
-        .row
-          .column.medium-6.large-4
-            .block-title Liên hệ
-            .block-content
-              ul.menu
-                li
-                  strong Số điện thoại:&nbsp;
-                  a href="tel:+841255239480" 0125.5239.480
-                li
-                  strong Địa chỉ:&nbsp;
-                  | 181 Xã Đàn 2, Nam Đồng, Đống Đa, Hà Nội
-                li
-                  strong Email:&nbsp;
-                  a href="mailto:support@ygm.vn" support@gym.vn
-          .column.medium-6.large-4
-            .block-title Thông tin thêm
-            .block-content
-              ul.menu
-                li
-                  a href="#" Giới thiệu
-                li
-                  a href="#" Hướng dẫn mua hàng
-                li
-                  a href="#" Hướng dẫn thanh toán
-                li
-                  a href="#" Điều khoản
-                li
-                  a href="#" Chính sách đổi trả
-                li
-                  a href="#" Sơ đồ trang
-          .column.medium-6.large-4
-            .block-title YGM Facebook
-            .block-content
-              iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ffacebook&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"
-      .copyright-bar Bản quyền thuộc về YGM. Mã số doanh nghiệp: 0106773786 do Sở Kế hoạch &amp; Đầu tư TP Hà Nội cấp lần đầu ngày 10/02/2015
+      = render 'layouts/footer'
 
     #toolbar
       a.to-top href="#"
