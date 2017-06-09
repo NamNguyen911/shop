@@ -39,7 +39,7 @@
                     td.image
                       a.image href="/detail.html" style="background-image: url(/assets/img/products/1.jpg)"
                     td
-                      = link_to order_item.product.name, product_path(order_item.product)
+                      = link_to "#{order_item.product.name} - Size #{order_item.size}", product_path(order_item.product)
                     td.price
                       /span.old 299000
                       /span.current 199000

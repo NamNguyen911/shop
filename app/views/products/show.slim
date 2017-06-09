@@ -28,7 +28,8 @@
 
               .column.medium-5.large-6
                 /pre.json [{"set":["origin-viet-nam","size-s"],"price":{"current":120000,"old":300000},"stock":10,"sku":"dl-001-vn-s"},{"set":["origin-viet-nam","size-m"],"price":{"current":130000,"old":300000},"stock":10,"sku":"dl-001-vn-m"},{"set":["origin-viet-nam","size-l"],"price":{"current":140000,"old":300000},"stock":10,"sku":"dl-001-vn-l"},{"set":["origin-viet-nam","size-xl"],"price":{"current":150000,"old":300000},"stock":10,"sku":"dl-001-vn-xl"},{"set":["origin-han-quoc","size-s"],"price":{"current":220000,"old":300000},"stock":10,"sku":"dl-001-hq-s"},{"set":["origin-han-quoc","size-m"],"price":{"current":230000,"old":300000},"stock":10,"sku":"dl-001-hq-m"},{"set":["origin-han-quoc","size-l"],"price":{"current":240000,"old":300000},"stock":10,"sku":"dl-001-hq-l"},{"set":["origin-han-quoc","size-xl"],"price":{"current":250000,"old":300000},"stock":10,"sku":"dl-001-hq-xl"}]
-                form
+                /form
+                = simple_form_for @order_item, remote: true do |f|
                   h1.name
                     | #{@product.name}
                     .sku
@@ -57,24 +58,18 @@
                     .size
                       .caption Kích cỡ
                       ul.candidates
-                        li
-                          input#size-s type="radio" name="size" value="s"
-                          label for="size-s" S
-                        li
-                          input#size-m type="radio" name="size" value="m"
-                          label for="size-m" M
-                        li
-                          input#size-l type="radio" name="size" value="l"
-                          label for="size-l" L
-                        li
-                          input#size-xl type="radio" name="size" value="xl"
-                          label for="size-xl" XL
+                        - @product.sizes.values.each do |s|
+                          li
+                            input id="size-#{s}" type="radio" name="order_item[size]" value="#{s}"
+                            label for= "size-#{s}" = s
                       a.link href="#"
                         span.fa.fa-object-ungroup style="margin-right: 5px"
                         | Hướng dẫn chọn size
                     .quantity
                       .caption Số lượng sản phẩm
-                      input type="number" value="1" placeholder="Số lượng sản phẩm"
+                      /input type="number" value="1" placeholder="Số lượng sản phẩm"
+                      = f.input :quantity, label: false, value: "1", placeholder: "Số lượng sản phẩm", input_html: { value: '1' }
+                      = f.input :product_id, as: :hidden
 
                   button.submit-to-cart type="submit"
                     span.fa.fa-shopping-basket style="margin-right: 5px"
