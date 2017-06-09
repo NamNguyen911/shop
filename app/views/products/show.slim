@@ -25,12 +25,6 @@
                   - @product.images.each do |i|
                     div
                       img src="#{i.file.url(:medium)}"
-                  /div
-                    img src="/assets/img/products/1.jpg"
-                  /div
-                    img src="/assets/img/products/2.jpg"
-                  /div
-                    img src="/assets/img/products/3.jpg"
 
               .column.medium-5.large-6
                 /pre.json [{"set":["origin-viet-nam","size-s"],"price":{"current":120000,"old":300000},"stock":10,"sku":"dl-001-vn-s"},{"set":["origin-viet-nam","size-m"],"price":{"current":130000,"old":300000},"stock":10,"sku":"dl-001-vn-m"},{"set":["origin-viet-nam","size-l"],"price":{"current":140000,"old":300000},"stock":10,"sku":"dl-001-vn-l"},{"set":["origin-viet-nam","size-xl"],"price":{"current":150000,"old":300000},"stock":10,"sku":"dl-001-vn-xl"},{"set":["origin-han-quoc","size-s"],"price":{"current":220000,"old":300000},"stock":10,"sku":"dl-001-hq-s"},{"set":["origin-han-quoc","size-m"],"price":{"current":230000,"old":300000},"stock":10,"sku":"dl-001-hq-m"},{"set":["origin-han-quoc","size-l"],"price":{"current":240000,"old":300000},"stock":10,"sku":"dl-001-hq-l"},{"set":["origin-han-quoc","size-xl"],"price":{"current":250000,"old":300000},"stock":10,"sku":"dl-001-hq-xl"}]
@@ -42,11 +36,12 @@
                       strong DL-005
                   .price
                     .current
-                      strong 299.000đ
-                    .old
+                      strong = @product.price
+                      /strong 299.000đ
+                    /.old
                       | Giá gốc:&nbsp;
                       strong 350.000đ
-                    .reduce
+                    /.reduce
                       | Giảm:&nbsp;
                       strong 51.000đ (-15%)
                   .params
