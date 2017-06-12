@@ -58,9 +58,9 @@
                     .size
                       .caption Kích cỡ
                       ul.candidates
-                        - @product.sizes.values.each do |s|
+                        - @product.sizes.values.each_with_index do |s, index|
                           li
-                            input id="size-#{s}" type="radio" name="order_item[size]" value="#{s}"
+                            input id="size-#{s}" type="radio" name="order_item[size]" value="#{s}" checked=('' if index == 0)
                             label for= "size-#{s}" = s
                       a.link href="#"
                         span.fa.fa-object-ungroup style="margin-right: 5px"
@@ -74,6 +74,7 @@
                   button.submit-to-cart type="submit"
                     span.fa.fa-shopping-basket style="margin-right: 5px"
                     | Thêm vào giỏ hàng
+                  span#order-status
 
             .row
               .column

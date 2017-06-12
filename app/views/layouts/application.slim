@@ -58,7 +58,7 @@ html
         span.fa.fa-arrow-up
       = link_to carts_show_path, class: 'view-cart' do
         span.fa.fa-shopping-cart
-        span.counter = current_order.order_items.size
+        span.counter.item-in-cart = current_order.order_items.size
         span.spinner
           i.fa.fa-refresh.fa-spin.fa-fw
       a.menu href="#"

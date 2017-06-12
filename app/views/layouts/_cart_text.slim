@@ -2,4 +2,4 @@
 /.cart-text
 = link_to carts_show_path, class: 'view-cart' do
   | Giỏ hàng
-  span.counter = current_order.order_items.size
+  span.counter.item-in-cart = current_order.order_items.size
