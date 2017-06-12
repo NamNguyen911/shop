@@ -21,7 +21,7 @@
         .listing
           h1.title Giỏ hàng
 
-          form(action="/checkout.html")
+          = simple_form_for current_order, url:carts_update_path, method: :patch, remote: true do |f|
             .shopping-cart
               = render 'shopping_cart'
 
@@ -41,4 +41,4 @@
 
             .row
               .column.text-right
-                a.button.checkout href="/checkout.html" Tiến hành thanh toán
+                = link_to "Tiến hành thanh toán", carts_checkout_path, class: 'button checkout'

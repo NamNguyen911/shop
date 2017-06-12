@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :order_items, only: [:create, :update, :destroy]
+  resources :order_items, only: [:create, :destroy]
 
   get 'carts/show'
   get 'carts/checkout'
+  patch 'carts/update'
   post 'carts/confirm'
 
   get 'thank_you', to: 'home#thank_you'

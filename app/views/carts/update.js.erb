@@ -1,2 +1,2 @@
-$(".item-in-cart").text("<%= @order.order_items.size %>")
+$(".item-in-cart").text("<%= @order_items.size %>")
 $(".shopping-cart").html("<%= escape_javascript(render 'carts/shopping_cart', layout: false) %>")

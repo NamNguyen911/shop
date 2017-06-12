@@ -28,25 +28,12 @@ table#cart
           /span.current 199000
           span = order_item.unit_price
         td.text-right
-          input.quantity type="number" value="#{order_item.quantity}" placeholder="Nhập số lượng"
+          /= order_form.simple_fields_for order_item do |item_form|
+            = item_form.input_field :quantity, class: 'quantity', as: :integer
+          input.quantity type="number" value="#{order_item.quantity}" placeholder="Nhập số lượng" name="order[change][#{order_item.id}]"
         td.price
           /span.total 199000
           span.total = order_item.total_price
-
-      /tr
-        td
-          a.remove href="#" &times;
-        td.image
-          a.image href="/detail.html" style="background-image: url(/assets/img/products/1.jpg)"
-        td
-          a.name href="/detail.html" Set đồ lót ren không gọng mút
-        td.price
-          span.old 299000
-          span.current 199000
-        td.text-right
-          input.quantity type="number" value="1" placeholder="Nhập số lượng"
-        td.price
-          span.total 199000
   tfoot
     tr
       td colspan="5" Tổng đơn hàng
