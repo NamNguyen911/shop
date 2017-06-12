@@ -2,7 +2,7 @@
 
 # dependencies
 sudo apt-get update
-sudo apt-get -y install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev nodejs
+sudo apt-get -y install git-core curl nginx zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev nodejs
 
 # TODO rbenv, bundler not work
 # install rbenv
@@ -37,4 +37,3 @@ rbenv rehash
 
 # TODO need to create user ygm and grant permission
 sudo apt-get -y install mysql-server mysql-client libmysqlclient-dev
-

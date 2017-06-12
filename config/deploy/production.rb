@@ -73,4 +73,5 @@ set :stage, :production
 
 set :default_env, {
   ygm_database_password: ENV["YGM_DATABASE_PASSWORD"],
+  secret_key_base: ENV["SECRET_KEY_BASE"],
 }

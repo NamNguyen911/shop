@@ -136,6 +136,7 @@ namespace :setup do
     end
   end
 
+  # TODO got permission denied
   desc "Symlinks config files for Nginx."
   task :symlink_config do
     on roles(:app) do
