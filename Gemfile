@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
-gem 'capistrano-rails', group: :development
+# gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -61,4 +61,12 @@ gem 'simple_form'
 
 # gem 'sqlite3'
 gem 'mysql2'
-gem "paperclip", "~> 5.0.0"
+
+group :development do
+  gem 'capistrano',         require: false
+  # gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rbenv', '~> 2.0'
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
+end

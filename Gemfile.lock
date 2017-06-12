@@ -57,6 +57,13 @@ GEM
     capistrano-rails (1.2.3)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
+    capistrano-rbenv (2.1.1)
+      capistrano (~> 3.1)
+      sshkit (~> 1.3)
+    capistrano3-puma (3.1.0)
+      capistrano (~> 3.7)
+      capistrano-bundler
+      puma (~> 3.4)
     climate_control (0.1.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
@@ -239,7 +246,11 @@ PLATFORMS
 DEPENDENCIES
   byebug
   cancancan (~> 1.10)
+  capistrano
+  capistrano-bundler
   capistrano-rails
+  capistrano-rbenv (~> 2.0)
+  capistrano3-puma
   coffee-rails (~> 4.2)
   devise
   enumerize
@@ -265,4 +276,4 @@ RUBY VERSION
    ruby 2.4.0p0
 
 BUNDLED WITH
-   1.15.0
+   1.15.1

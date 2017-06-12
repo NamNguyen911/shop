@@ -59,3 +59,18 @@
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+
+server '34.211.7.251', roles: [:web, :app, :db], primary: true
+
+set :ssh_options, {
+  forward_agent: true,
+  user: fetch(:user),
+  keys: %w(~/.ssh/yougotme/demo.pem)
+}
+
+set :stage, :production
+
+
+set :default_env, {
+  ygm_database_password: ENV["YGM_DATABASE_PASSWORD"],
+}

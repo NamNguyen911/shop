@@ -1,13 +1,15 @@
 # ssh ubuntu@ygm_demo "bash -s" < ./setup_server.sh
 
 # dependencies
-sudo apt update
-sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev nodejs
+sudo apt-get update
+sudo apt-get -y install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev nodejs
 
+# TODO rbenv, bundler not work
 # install rbenv
 cd
 git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 exec $SHELL
 
@@ -33,4 +35,6 @@ gem install rails -v 5.0.2
 
 rbenv rehash
 
-sudo apt -y install mysql-server mysql-client libmysqlclient-dev
+# TODO need to create user ygm and grant permission
+sudo apt-get -y install mysql-server mysql-client libmysqlclient-dev
+
