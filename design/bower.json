@@ -1,0 +1,27 @@
+{
+  "name": "you-got-me",
+  "authors": [
+    "Gia <gia@coa.vn>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./assets/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "^5.5.3",
+    "owl.carousel": "owl-carousel2#^2.2.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "~2.1.0",
+    "owl.carousel2.thumbs": "https://github.com/gijsroge/OwlCarousel2-Thumbs.git#^0.1.7",
+    "lodash": "^4.17.4"
+  }
+}

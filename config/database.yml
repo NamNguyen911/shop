@@ -47,7 +47,7 @@ default: &default
   reconnect: false
   username: ygm
   password: password1
-  socket: /tmp/mysql.sock
+  # socket: /tmp/mysql.sock
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>

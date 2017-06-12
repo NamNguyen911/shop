@@ -1,0 +1,139 @@
+extends layout
+
+block breadcrumbs
+  #breadcrumbs
+    .container
+      .row
+        .column
+          nav(role="natigation")
+            ul.breadcrumbs
+              li
+                a(href="/")
+                  span.fa.fa-home
+              li
+                a(href="/category.html") Cửa hàng
+              li
+                a(href="/cart.html") Giỏ hàng
+              li
+                a(href="/checkout.html") Tiến hành thanh toán
+
+block content
+
+  .container.page
+    .row
+
+      .column
+        .listing
+          h1.title Tiến hành thanh toán
+          form(action="#")
+
+            .row
+              .column.medium-6
+                h2.block-sub-title Thông tin thanh toán
+                label Họ và tên
+                  input(type="text" placeholder="Nhập họ và tên" required)
+                label Địa chỉ
+                  input(type="text" placeholder="Địa chỉ liên hệ" required)
+                label Tỉnh/Thành phố
+                  select(required)
+                    option(value="Thành phố Hà Nội") Thành phố Hà Nội
+                    option(value="Thành phố Hồ Chí Minh") Thành phố Hồ Chí Minh
+                    option(value="An Giang") An Giang
+                    option(value="Bà Rịa - Vũng Tàu") Bà Rịa - Vũng Tàu
+                    option(value="Bắc Giang") Bắc Giang
+                    option(value="Bắc Kạn") Bắc Kạn
+                    option(value="Bạc Liêu") Bạc Liêu
+                    option(value="Bắc Ninh") Bắc Ninh
+                    option(value="Bến Tre") Bến Tre
+                    option(value="Bình Định") Bình Định
+                    option(value="Bình Dương") Bình Dương
+                    option(value="Bình Phước") Bình Phước
+                    option(value="Bình Thuận") Bình Thuận
+                    option(value="Cà Mau") Cà Mau
+                    option(value="Cao Bằng") Cao Bằng
+                    option(value="Đắk Lắk") Đắk Lắk
+                    option(value="Đắk Nông") Đắk Nông
+                    option(value="Điện Biên") Điện Biên
+                    option(value="Đồng Nai") Đồng Nai
+                    option(value="Đồng Tháp") Đồng Tháp
+                    option(value="Gia Lai") Gia Lai
+                    option(value="Hà Giang") Hà Giang
+                    option(value="Hà Nam") Hà Nam
+                    option(value="Hà Tĩnh") Hà Tĩnh
+                    option(value="Hải Dương") Hải Dương
+                    option(value="Hậu Giang") Hậu Giang
+                    option(value="Hòa Bình") Hòa Bình
+                    option(value="Hưng Yên") Hưng Yên
+                    option(value="Khánh Hòa") Khánh Hòa
+                    option(value="Kiên Giang") Kiên Giang
+                    option(value="Kon Tum") Kon Tum
+                    option(value="Lai Châu") Lai Châu
+                    option(value="Lâm Đồng") Lâm Đồng
+                    option(value="Lạng Sơn") Lạng Sơn
+                    option(value="Lào Cai") Lào Cai
+                    option(value="Long An") Long An
+                    option(value="Nam Định") Nam Định
+                    option(value="Nghệ An") Nghệ An
+                    option(value="Ninh Bình") Ninh Bình
+                    option(value="Ninh Thuận") Ninh Thuận
+                    option(value="Phú Thọ") Phú Thọ
+                    option(value="Quảng Bình") Quảng Bình
+                    option(value="Quảng Nam") Quảng Nam
+                    option(value="Quảng Ngãi") Quảng Ngãi
+                    option(value="Quảng Ninh") Quảng Ninh
+                    option(value="Quảng Trị") Quảng Trị
+                    option(value="Sóc Trăng") Sóc Trăng
+                    option(value="Sơn La") Sơn La
+                    option(value="Tây Ninh") Tây Ninh
+                    option(value="Thái Bình") Thái Bình
+                    option(value="Thái Nguyên") Thái Nguyên
+                    option(value="Thanh Hóa") Thanh Hóa
+                    option(value="Thừa Thiên Huế") Thừa Thiên Huế
+                    option(value="Tiền Giang") Tiền Giang
+                    option(value="Trà Vinh") Trà Vinh
+                    option(value="Tuyên Quang") Tuyên Quang
+                    option(value="Vĩnh Long") Vĩnh Long
+                    option(value="Vĩnh Phúc") Vĩnh Phúc
+                    option(value="Yên Bái") Yên Bái
+                    option(value="Phú Yên") Phú Yên
+                    option(value="Cần Thơ") Cần Thơ
+                    option(value="Đà Nẵng") Đà Nẵng
+                    option(value="Hải Phòng") Hải Phòng
+                label Số điện thoại
+                  input(type="text" placeholder="Số điện thoại liên hệ" required)
+                label Email
+                  input(type="email" placeholder="email@cuaban.com" required)
+                label Ghi chú đơn hàng
+                  textarea
+
+              .column.medium-6
+                h2.block-sub-title Đơn hàng của bạn
+                table#cart.checkout
+                  thead
+                    tr
+                      th Sản phẩm
+                      th.text-right Tổng cộng
+                  tbody
+                    tr
+                      td
+                        a.name(href="/detail.html") Set đồ lót ren không gọng mút
+                          span.times &nbsp;&times;&nbsp;3
+                      td.price
+                        span.total= price(199000)
+                    tr
+                      td
+                        a.name(href="/detail.html") Set đồ lót ren có gọng mút
+                          span.times &nbsp;&times;&nbsp;3
+                      td.price
+                        span.total= price(199000)
+                  tfoot
+                    tr
+                      td Tổng đơn hàng
+                      td.price
+                        = price(1194000)
+
+                h2.block-sub-title Phương thức thanh toán
+                input#cod(type="radio")
+                label(for="cod" checked) Thanh toán khi nhận hàng
+                .text-right
+                  button.button.checkout(type="submit") Đặt hàng

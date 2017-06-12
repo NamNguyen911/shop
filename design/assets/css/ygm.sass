@@ -1,0 +1,628 @@
+$large-logo-height: 70px
+$medium-logo-height: 60px
+$small-logo-height: 50px
+
+html,
+body,
+h1, h2, h3, h4, h5
+  letter-spacing: .05em
+
+label
+  letter-spacing: 0
+  > input[type=text], input[type=email], input[type=number], select, textarea
+    margin-top: 5px
+
+a
+  color: black
+  transition: color .3s ease-in-out
+  &:hover
+    color: $primary-color
+
+a, button
+  &.ghost-button
+    text-transform: uppercase
+    font-weight: bold
+    font-size: 14px
+    display: inline-block
+    padding: 12px 18px
+    border: 2px solid black
+    color: black
+    transition: all .3s ease-in-out
+    background-color: transparent
+    &.small
+      font-size: 12px
+      padding: 9px 15px
+    &.light
+      color: white
+      border-color: white
+    &.actived, &:hover
+      color: black
+      background-color: $primary-color
+      border-color: $primary-color
+
+button, .button
+  &.checkout
+    font-size: 13px
+    font-weight: bold
+  &.submit-to-cart
+    background-color: transparent
+    color: black
+    border: 2px solid black
+    font-size: 12px
+    text-transform: uppercase
+    font-weight: bold
+    letter-spacing: .1em
+    padding: 14px 18px
+    transition: all .3s ease-in-out
+    &:hover
+      background-color: $primary-color
+      border-color: $primary-color
+
+.container
+  &.page
+    padding: 30px 0
+    @media #{$large}
+      padding: 40px 0
+
+.tabs
+  .tab-title
+    padding: 0
+    font-weight: bold
+    text-transform: uppercase
+    &:not(:last-child)
+      margin-right: 30px
+    a
+      outline: none
+      position: relative
+      padding: 10px 0
+.tabs-content
+  h1
+    font-size: 18px
+  p
+    font-size: 13px
+
+#cart
+  border-collapse: collapse
+  width: 100%
+  margin-bottom: 25px
+  &.checkout
+    td
+      padding: 9px
+  td
+    padding: 8px 3px
+    border-top: 1px solid #eee
+  input.quantity
+    display: inline-block
+    width: 60px
+    margin: 0
+  .price
+    text-align: right
+    font-size: 13px
+    span
+      display: block
+      &.total
+        font-weight: bold
+      &.old
+        color: #ddd
+        text-decoration: line-through
+  thead
+    th
+      text-transform: uppercase
+      font-size: 12px
+      padding: 10px 9px
+      border-bottom: 1px solid #ddd
+  tfoot
+    td
+      border-top: 1px solid #ddd
+      text-transform: uppercase
+      font-size: 12px
+      padding: 9px
+      background-color: white
+  .remove
+    $size: 20px
+    display: inline-block
+    width: $size
+    height: $size
+    line-height: $size
+    border-radius: $size
+    font-size: 15px
+    text-align: center
+    letter-spacing: 0
+    background-color: black
+    color: white
+    transition: none
+    &:hover
+      background-color: $alert-color
+      color: white
+  .name
+    font-size: 13px
+    &:hover
+      color: black
+  .image
+    width: 64px
+    > a
+      display: block
+      background-color: #f0f0f0
+      background-repeat: no-repeat
+      background-position: center
+      background-size: cover
+      width: 100%
+      height: 0
+      padding-top: 100%
+
+#toolbar
+  $size: 50px
+  position: fixed
+  bottom: 50px
+  right: 0
+  width: $size
+  background-color: black
+  letter-spacing: 0
+  z-index: 10000
+  a
+    display: block
+    line-height: $size
+    width: $size
+    text-align: center
+    color: white
+    position: relative
+    background-color: black
+    transition: background-color .3s ease-in-out
+    &:not(:last-child)
+      border-bottom: 1px solid #111
+    &:hover
+      background-color: #222
+  span.counter
+    position: absolute
+    background-color: $primary-color
+    padding: 2px 4px
+    font-weight: bold
+    border-radius: 1000px
+    line-height: 12px
+    display: inline-block
+    font-size: 10px
+    margin-left: 10px
+    letter-spacing: 0
+    right: 8px
+    bottom: 5px
+    color: black
+  span.fa
+    font-size: 18px
+  .view-cart
+    .spinner
+      display: none
+    &.syncing
+      span.fa-shopping-cart
+        display: none
+      .spinner
+        display: inline
+
+#header
+  border-bottom: 1px solid rgba(black, .1)
+  padding: 15px 0
+  @media #{$medium}
+    padding: 20px 0
+  @media #{$large}
+    padding: 25px 0
+  .logo
+    img
+      height: $small-logo-height
+      @media #{$medium}
+        height: $medium-logo-height
+      @media #{$large}
+        height: $large-logo-height
+  .menu
+    text-transform: uppercase
+    display: table
+    width: 100%
+    font-weight: bold
+    height: $small-logo-height
+    @media #{$medium}
+      height: $medium-logo-height
+    @media #{$large}
+      height: $large-logo-height
+    a
+      color: black
+      font-size: 13px
+      display: table-cell
+      vertical-align: middle
+      &:not(:last-child)
+        margin-right: 20px
+    span.counter
+      background-color: $primary-color
+      padding: 5px 6px
+      border-radius: 1000px
+      line-height: 12px
+      display: inline-block
+      font-size: 12px
+      margin-left: 10px
+      letter-spacing: 0
+    span.fa
+      font-size: 20px
+
+#side-bar
+  .box
+    margin-bottom: 25px
+    @media #{$large}
+      margin-bottom: 40px
+    .caption
+      font-size: 14px
+      font-weight: bold
+      text-transform: uppercase
+      &:after
+        content: ''
+        display: block
+        width: 60px
+        border-bottom: 2px solid black
+        margin: 20px 0 25px 0
+    .content
+      font-size: 13px
+    p
+      font-size: 13px
+      color: #555
+      a
+        font-weight: bold
+    ul.categories
+      font-size: 0
+      li
+        font-size: 13px
+        margin-bottom: 3px
+      span.counter
+        margin-left: 10px
+        float: right
+        font-weight: bold
+
+#categories
+  ul.categories
+    margin: 0
+    padding: 0
+    list-style: none
+    text-align: center
+    > li
+      display: inline-block
+      margin: 0 6px 12px 6px
+    a
+      display: block
+      font-weight: bold
+      text-transform: uppercase
+      font-size: 12px
+      padding: 10px 15px
+      border: 2px solid black
+      color: black
+      transition: all .3s ease-in-out
+      &:hover
+        color: black
+        background-color: $primary-color
+        border-color: $primary-color
+      &:before
+        content: '#'
+        margin-right: 5px
+      .counter
+        margin-left: 8px
+        &:before
+          content: '('
+        &:after
+          content: ')'
+
+#breadcrumbs
+  padding: 15px 0
+  border-bottom: 1px solid rgba(black, .05)
+  ul
+    margin: 0
+
+#content
+  .pagination
+    a
+      border-radius: 0
+  h1.title
+    font-size: 24px
+    font-weight: bold
+    text-transform: uppercase
+    margin: 0
+    &:after
+      content: ''
+      display: block
+      width: 60px
+      border-bottom: 2px solid black
+      margin: 20px 0
+  h2.sub-title
+    font-weight: bold
+    font-size: 15px
+    text-align: center
+    margin: 20px 0
+    text-transform: uppercase
+    letter-spacing: .15em
+  .note
+    margin: 10px 0
+    font-size: 13px
+    font-style: italic
+    color: #999
+  .block
+    padding: 30px 0
+  .block-title
+    font-weight: bold
+    text-transform: uppercase
+    text-align: center
+    font-size: 20px
+    letter-spacing: .25em
+    margin-bottom: 20px
+    @media #{$medium}
+      font-size: 24px
+      margin-bottom: 30px
+  .block-sub-title
+    font-weight: bold
+    text-transform: uppercase
+    font-size: 13px
+    margin: 15px 0
+  .product-detail
+    font-size: 14px
+    .json
+      display: none
+    .product-images
+      margin-bottom: 30px
+      .owl-thumb-item
+        position: relative
+        width: 100px
+        height: 100px
+        background-color: transparent
+        margin-top: 10px
+        &:not(:last-child)
+          margin-right: 10px
+        img
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+    .sku
+      text-transform: uppercase
+      color: #999
+      font-size: 13px
+      font-style: italic
+      margin-bottom: 20px
+    .price
+      margin-bottom: 30px
+      .current
+        font-size: 28px
+        color: $primary-color
+    .name
+      font-size: 24px
+      font-weight: bold
+      letter-spacing: .1em
+      margin: 0
+    .link
+      font-size: 12px
+      margin: 5px 0
+      display: inline-block
+    .params
+      user-select: none
+      > *
+        margin-bottom: 15px
+      .caption
+        color: black
+        margin-bottom: 10px
+        text-transform: uppercase
+        font-size: 13px
+    ul.candidates
+      margin: 0
+      padding: 0
+      list-style: none
+      font-size: 0
+      > li
+        display: inline-block
+        margin-bottom: 8px
+        &:not(:last-child)
+          margin-right: 8px
+        input
+          display: none
+          &:checked + label
+            background-color: black
+            color: white
+        label
+          margin: 0
+          font-size: 12px
+          font-weight: bold
+          background-color: #f0f0f0
+          display: block
+          padding: 7px 12px
+          transition: all .3s ease-in-out
+
+  .product
+    text-align: center
+    &:hover
+      .image img.hover
+        opacity: 1
+        transform: scale(1.1)
+    > a
+      color: black
+    .image
+      position: relative
+      display: block
+      width: 100%
+      height: 0
+      padding-top: 120%
+      overflow: hidden
+      margin-bottom: 15px
+      background-color: #fafafa
+      .badge
+        position: absolute
+        bottom: 0
+        right: 0
+        color: white
+        font-size: 20px
+        text-align: center
+        z-index: 1
+        line-height: 20px
+        padding: 0 7px 5px 0
+        text-align: right
+        font-weight: bold
+        &:before
+          content: ''
+          display: block
+          position: absolute
+          right: 0
+          bottom: 0
+          z-index: -1
+        small
+          font-size: 10px
+          font-weight: normal
+          text-transform: uppercase
+          display: block
+          letter-spacing: 8px
+        &.sale
+          $border-color: rgba($alert-color, .5)
+          &:before
+            border: 52px solid transparent
+            border-right-color: $border-color
+            border-bottom-color: $border-color
+      img
+        position: absolute
+        width: 100%
+        top: 0
+        left: 0
+        &.hover
+          transition: all .3s ease-in-out
+          opacity: 0
+          transform: scale(1)
+    .name
+      font-size: 13px
+      margin-bottom: 5px
+      font-weight: bold
+    .price
+      font-size: 14px
+      .old
+        margin-right: 10px
+        text-decoration: line-through
+        color: #555
+      .current
+        color: darken($primary-color, 5)
+        font-weight: bold
+        font-size: 16px
+    .actions
+      text-align: center
+      margin-top: 10px
+      a
+        display: inline-block
+        color: black
+        transition: color .3s ease-in-out
+        padding: 7px 15px
+        border-top: 1px solid rgba(black, .1)
+        &:first-child
+          padding-left: 30px
+        &:last-child
+          padding-right: 30px
+        &:not(:last-child)
+          border-right: 1px solid rgba(black, .1)
+        &:hover
+          color: $primary-color
+
+#hero
+  margin-bottom: 10px
+  @media #{$medium}
+    margin-bottom: 20px
+  @media #{$large}
+    margin-bottom: 30px
+  .slide
+    position: relative
+    &.alt
+      .info
+        top: auto
+        bottom: 15vh
+    a
+      color: black
+      &:hover
+        .image
+          transform: scale(1.05)
+    .image
+      width: 75% !important
+      margin-left: 20%
+      transform: scale(1)
+      transition: transform .3s ease-in-out
+    .info
+      position: absolute
+      bottom: 0
+      left: 5%
+      width: 95%
+      top: 130px
+      @media #{$large}
+        top: 200px
+      .title
+        font-weight: bold
+        text-transform: uppercase
+        width: 60%
+        text-align: left
+        letter-spacing: .7em
+        font-size: 32px
+        @media #{$medium}
+          font-size: 48px
+        @media #{$large}
+          font-size: 52px
+      .description
+        margin-top: 10px
+        letter-spacing: .33em
+        font-weight: bold
+        line-height: 1.75em
+        width: 60%
+        font-size: 13px
+        @media #{$medium}
+          width: 50%
+          font-size: 15px
+        @media #{$medium}
+          width: 40%
+          font-size: 16px
+
+#shop
+  background-color: #555
+  background-image: url(../img/shop.bg.jpg)
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center
+  background-blend-mode: multiply
+  color: white
+  p
+    color: #ddd
+    font-size: 14px
+    letter-spacing: 0
+  &.block
+    padding: 130px 0 100px 0
+
+#footer
+  background-color: black
+  color: white
+  .menu-bar
+    padding: 40px 0
+  .block-title
+    text-transform: uppercase
+    font-weight: bold
+    font-size: 14px
+    display: inline-block
+    letter-spacing: .15em
+    &:after
+      content: ''
+      border-bottom: 2px solid #222
+      display: block
+      width: 60px
+      margin: 20px 0 25px 0
+  .block-content
+    margin-bottom: 20px
+  ul.menu
+    margin-bottom: 0
+    font-size: 0
+    li
+      font-size: 13px
+      letter-spacing: .1em
+      color: #777
+      margin-bottom: 3px
+      strong
+        color: white
+    a
+      color: #777
+      &:hover
+        color: $primary-color
+  .copyright-bar
+    font-family: $font-family-sans-serif
+    background-color: #111
+    padding: 15px
+    font-size: 12px
+    color: #777
+    text-align: center
+    text-transform: uppercase

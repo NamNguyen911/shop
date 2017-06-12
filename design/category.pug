@@ -1,0 +1,126 @@
+extends layout
+
+block breadcrumbs
+  #breadcrumbs
+    .container
+      .row
+        .column
+          nav(role="natigation")
+            ul.breadcrumbs
+              li
+                a(href="/")
+                  span.fa.fa-home
+              li
+                a(href="/categories.html") Cửa hàng
+              li
+                a(href="/categories.html") Danh mục
+
+block content
+
+  .container.page
+    .row
+
+      .column.medium-4.large-3
+        #side-bar
+          .box
+            .caption Danh mục
+            .content
+              ul.categories
+                li
+                  a(href="/category.html") Đồ ngủ gợi cảm
+                    span.counter 5
+                li
+                  a(href="/category.html") Váy nóng bỏng
+                    span.counter 12
+                li
+                  a(href="/category.html") Phụ kiện khó cưỡng
+                    span.counter 30
+          .box
+            .caption Đặt hàng nhanh
+            .content
+              p Gọi ngay&nbsp
+                a(href="tel://+841255239480") 0125.5239.480
+                |  để đặt hàng nhanh và nhận được tư vấn sớm nhất.
+
+      .column.medium-8.large-9
+        .listing
+          h1.title Cửa hàng
+          .row
+            .column.medium-7
+              .note Tìm thấy 123 sản phẩm.
+            .column.medium-5
+              select.sort
+                option(value="/category.html") Sắp xếp theo giá tăng dần
+                option(value="/category.html") Sắp xếp theo giá giảm dần
+          ul.small-block-grid-1.medium-block-grid-2.large-block-grid-3
+            - for (i = 0; i < 3; i ++)
+              li
+                .product.on-sale
+                  a(href="/detail.html")
+                    .image
+                      img.default(src="/assets/img/products/1.jpg")
+                      img.hover(src="/assets/img/products/2.jpg")
+                      .badge.sale 15%
+                        small off
+                    .name Set đồ lót ren không gọng mút
+                    .price
+                    span.old= price(350000)
+                    span.current= price(299000)
+                  .actions
+                    a.quick-view(href="#")
+                      span.fa.fa-arrows-alt
+                    a.add-to-cart(href="/add-to-cart.html")
+                      span.fa.fa-shopping-cart
+              li
+                .product
+                  a(href="/detail.html")
+                    .image
+                      img.default(src="/assets/img/products/2.jpg")
+                      img.hover(src="/assets/img/products/3.jpg")
+                    .name Set đồ lót ren không gọng mút
+                    .price
+                      span.current= price(299000)
+                  .actions
+                    a.quick-view(href="#")
+                      span.fa.fa-arrows-alt
+                    a.add-to-cart(href="/add-to-cart.html")
+                      span.fa.fa-shopping-cart
+              li
+                .product.on-sale
+                  a(href="/detail.html")
+                    .image
+                      img.default(src="/assets/img/products/3.jpg")
+                      img.hover(src="/assets/img/products/1.jpg")
+                      .badge.sale 15%
+                        small off
+                    .name Set đồ lót ren không gọng mút
+                    .price
+                    span.old= price(350000)
+                    span.current= price(299000)
+                  .actions
+                    a.quick-view(href="#")
+                      span.fa.fa-arrows-alt
+                    a.add-to-cart(href="/add-to-cart.html")
+                      span.fa.fa-shopping-cart
+
+          ul.pagination.right(role="navigation")
+            li.arrow.unavailable
+              a &laquo;
+            li.current
+              a 1
+            li
+              a(href="#") 2
+            li
+              a(href="#") 3
+            li
+              a(href="#") 4
+            li.unavailable
+              a &hellip;
+            li
+              a(href="#") 7
+            li
+              a(href="#") 8
+            li
+              a(href="#") 9
+            li.pagination-next
+              a(href="#") &raquo;

@@ -1,0 +1,156 @@
+extends layout
+
+block breadcrumbs
+  #breadcrumbs
+    .container
+      .row
+        .column
+          nav(role="natigation")
+            ul.breadcrumbs
+              li
+                a(href="/")
+                  span.fa.fa-home
+              li
+                a(href="/category.html") Cửa hàng
+              li
+                a(href="/category.html") Đồ ngủ gợi cảm
+              li
+                a(href="/detail.html") Set đồ lót ren không gọng mút
+
+block content
+
+  .container.page
+    .row
+
+      .column
+        .listing
+          .product-detail
+            .row
+              .column.medium-7.large-6
+                .product-images.owl-carousel
+                  div
+                    img(src="/assets/img/products/1.jpg")
+                  div
+                    img(src="/assets/img/products/2.jpg")
+                  div
+                    img(src="/assets/img/products/3.jpg")
+
+              .column.medium-5.large-6
+                pre.json [{"set":["origin-viet-nam","size-s"],"price":{"current":120000,"old":300000},"stock":10,"sku":"dl-001-vn-s"},{"set":["origin-viet-nam","size-m"],"price":{"current":130000,"old":300000},"stock":10,"sku":"dl-001-vn-m"},{"set":["origin-viet-nam","size-l"],"price":{"current":140000,"old":300000},"stock":10,"sku":"dl-001-vn-l"},{"set":["origin-viet-nam","size-xl"],"price":{"current":150000,"old":300000},"stock":10,"sku":"dl-001-vn-xl"},{"set":["origin-han-quoc","size-s"],"price":{"current":220000,"old":300000},"stock":10,"sku":"dl-001-hq-s"},{"set":["origin-han-quoc","size-m"],"price":{"current":230000,"old":300000},"stock":10,"sku":"dl-001-hq-m"},{"set":["origin-han-quoc","size-l"],"price":{"current":240000,"old":300000},"stock":10,"sku":"dl-001-hq-l"},{"set":["origin-han-quoc","size-xl"],"price":{"current":250000,"old":300000},"stock":10,"sku":"dl-001-hq-xl"}]
+                form
+                  h1.name Set đồ lót ren không gọng mút
+                  .sku Mã sản phẩm:&nbsp;
+                    strong DL-005
+                  .price
+                    .current
+                      strong 299.000đ
+                    .old Giá gốc:&nbsp;
+                      strong 350.000đ
+                    .reduce Giảm:&nbsp;
+                      strong 51.000đ (-15%)
+                  .params
+                    .origin
+                      .caption Xuất sứ
+                      ul.candidates
+                        li
+                          input#origin-viet-nam(type="radio" name="origin" value="viet-nam")
+                          label(for="origin-viet-nam") Việt Nam
+                        li
+                          input#origin-han-quoc(type="radio" name="origin" value="han-quoc")
+                          label(for="origin-han-quoc") Hàn Quốc
+                    .size
+                      .caption Kích cỡ
+                      ul.candidates
+                        li
+                          input#size-s(type="radio" name="size" value="s")
+                          label(for="size-s") S
+                        li
+                          input#size-m(type="radio" name="size" value="m")
+                          label(for="size-m") M
+                        li
+                          input#size-l(type="radio" name="size" value="l")
+                          label(for="size-l") L
+                        li
+                          input#size-xl(type="radio" name="size" value="xl")
+                          label(for="size-xl") XL
+                      a.link(href="#")
+                        span.fa.fa-object-ungroup(style="margin-right: 5px")
+                        | Hướng dẫn chọn size
+                    .quantity
+                      .caption Số lượng sản phẩm
+                      input(type="number" value="1" placeholder="Số lượng sản phẩm")
+
+                  button.submit-to-cart(type="submit")
+                    span.fa.fa-shopping-basket(style="margin-right: 5px")
+                    | Thêm vào giỏ hàng
+
+            .row
+              .column
+                ul.tabs(data-tab)
+                  li.tab-title.active
+                    a(href="#more-info") Thông tin sản phẩm
+                  li.tab-title
+                    a(href="#how-to-order") Hướng dẫn mua hàng
+                  li.tab-title
+                    a(href="#return-and-refund") Chính sách đổi trả
+                .tabs-content
+                  #more-info.content.active
+                    h1 Xu hướng mua sắm đa kênh mới tại Robins
+                    p Ngày nay, thế giới thời trang ngày càng phát triển hơn và tầm ảnh hưởng của chúng đối với con người lại ngày càng được chú trọng. Một bộ trang phục đẹp không chỉ là quần áo đơn thuần mà nó còn thể hiện lên tính cách, phong cách sống, cũng như gu thẩm mỹ thời trang của mỗi cá nhân khi sử dụng. Thêm vào đó, khi quỹ thời gian ngày càng eo hẹp bởi những chi phối từ công việc, cuộc sống gia đình thì nhu cầu mua sắm thuận tiện và tiết kiệm thời gian đang tăng lên. Từ đó, hình thức mua sắm đa kênh hay còn được nhắc đến với thuật ngữ Omni channel, đang là một trong những sự lựa chọn được ưa chuộng nhất hiện nay. Ưu điểm của hình thức này là sự linh hoạt khi bạn tìm thấy món đồ yêu thích trên online và muốn đến lấy và thử sản phẩm tại cửa hàng hay khi sản phẩm không còn tại cửa hàng, bạn có thể đăng ký mua online và được giao hàng đến tận nhà. Với xu thế mua sắm trực tuyến ngày càng nhiều, Omni Channel gần như sẽ trở thành phương thức được các nhà bán lẻ áp dụng trong tương lai bởi độ phủ sóng rộng, chi phí thấp, cũng như hiệu quả mà nó mang lại. Không những vậy, với nguồn hàng hóa đa dạng và phong phú, chắc chắn sẽ giúp bạn dễ dàng chọn lựa được cho mình những bộ cánh hợp thời trang và lại tôn lên nét cá tính riêng của mình.
+                    h1 Khám phá những items luôn dẫn đầu xu hướng thời trang 2017
+                    p Bạn sẽ dễ dàng tìm được cho mình những mặt hàng thời trang phù hợp với từng nhu cầu cá nhân của mỗi người và đặc biệt là luôn bám sát xu hướng thời trang từng mùa. Từ các quý ông bảnh bao, lịch lãm đến những quý cô sang chảnh, tự tin với gu thời trang tinh tế, những mẫu thiết kế từ các thương hiệu thời trang được bày bán tại ROBINS online đều hoàn toàn đáp ứng được nhu cầu của nhiều đối tượng khác nhau. Không những dễ dàng chọn lựa được kiểu dáng, khi mua sắm thời trang tại ROBINS, bạn còn có thể tham khảo cũng như so sánh các mức giá khác nhau trong cùng một sản phẩm, đảm bảo cho việc tìm được món đồ mà mình thật sự ưng ý nhưng cũng cực kì phù hợp với túi tiền của mình.
+                  #how-to-order.content Hướng dẫn mua hàng
+                  #return-and-refund.content Chinh sách đổi trả
+
+          h2.sub-title Có thể bạn cũng thích
+          ul.small-block-grid-1.medium-block-grid-3.large-block-grid-4
+            - for (i = 0; i < 2; i ++)
+              li
+                .product.on-sale
+                  a(href="/detail.html")
+                    .image
+                      img.default(src="/assets/img/products/1.jpg")
+                      img.hover(src="/assets/img/products/2.jpg")
+                      .badge.sale 15%
+                        small off
+                    .name Set đồ lót ren không gọng mút
+                    .price
+                      span.old 350.000đ
+                      span.current 299.000đ
+                  .actions
+                    a.quick-view(href="#")
+                      span.fa.fa-arrows-alt
+                    a.add-to-cart(href="/add-to-cart.html")
+                      span.fa.fa-shopping-cart
+              li
+                .product
+                  a(href="/detail.html")
+                    .image
+                      img.default(src="/assets/img/products/2.jpg")
+                      img.hover(src="/assets/img/products/3.jpg")
+                    .name Set đồ lót ren không gọng mút
+                    .price
+                      span.current 299.000đ
+                  .actions
+                    a.quick-view(href="#")
+                      span.fa.fa-arrows-alt
+                    a.add-to-cart(href="/add-to-cart.html")
+                      span.fa.fa-shopping-cart
+              li
+                .product.on-sale
+                  a(href="/detail.html")
+                    .image
+                      img.default(src="/assets/img/products/3.jpg")
+                      img.hover(src="/assets/img/products/1.jpg")
+                      .badge.sale 15%
+                        small off
+                    .name Set đồ lót ren không gọng mút
+                    .price
+                      span.old 350.000đ
+                      span.current 299.000đ
+                  .actions
+                    a.quick-view(href="#")
+                      span.fa.fa-arrows-alt
+                    a.add-to-cart(href="/add-to-cart.html")
+                      span.fa.fa-shopping-cart
+
