@@ -4,8 +4,14 @@ ul.small-block-grid-1.medium-block-grid-2.large-block-grid-3
       .product.on-sale
         = link_to product_path(prod) do
           .image
-            img.default src="/assets/img/products/1.jpg"
-            img.hover src="/assets/img/products/2.jpg"
+            - unless prod.images.empty?
+              - firstImage = prod.images.first
+            - else
+              - firstImage = prod.images.new
+
+            = image_tag firstImage.file.url(:medium), class: 'default'
+              /img.default src="/assets/img/products/1.jpg"
+              /img.hover src="/assets/img/products/2.jpg"
             /.badge.sale 
               | 15%
               small off
@@ -15,7 +21,7 @@ ul.small-block-grid-1.medium-block-grid-2.large-block-grid-3
             /span.old 350.000đ
             /span.current 299.000đ
         .actions
-          a.quick-view href="#"
+          /a.quick-view href="#"
             span.fa.fa-arrows-alt
           = link_to add_product_path(prod), class: 'add-to-cart', remote: true do
             span.fa.fa-shopping-cart
