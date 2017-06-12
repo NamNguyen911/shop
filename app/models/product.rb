@@ -12,6 +12,14 @@ class Product < ApplicationRecord
     self.variants.where(name: "Size").first
   end
 
+  def photo
+    if images.empty?
+      images.new()
+    else
+      images.first
+    end
+  end
+
   private
 
   def create_variants
