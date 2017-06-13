@@ -7,7 +7,8 @@ html
     = csrf_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    link rel="stylesheet" type="text/css" href="/css/index.css"
+    //link rel="stylesheet" type="text/css" href="/css/index.css"
+    = stylesheet_link_tag "/css/index.css"
     = yield :css
 
   body
@@ -64,12 +65,12 @@ html
       a.menu href="#"
         span.fa.fa-bars
 
-    script src="/bower/jquery/dist/jquery.min.js"
-    script src="/bower/lodash/dist/lodash.min.js"
-    script src="/bower/fastclick/lib/fastclick.js"
-    script src="/bower/foundation/js/foundation.min.js"
-    script src="/bower/owl.carousel/dist/owl.carousel.min.js"
-    script src="/bower/owl.carousel2.thumbs/dist/owl.carousel2.thumbs.min.js"
-    script src="/js/index.js"
+    = javascript_include_tag "jquery/dist/jquery.min.js"
+    = javascript_include_tag "lodash/dist/lodash.min.js"
+    = javascript_include_tag "fastclick/lib/fastclick.js"
+    = javascript_include_tag "foundation/js/foundation.min.js"
+    = javascript_include_tag "owl.carousel/dist/owl.carousel.min.js"
+    = javascript_include_tag "owl.carousel2.thumbs/dist/owl.carousel2.thumbs.min.js"
+    = javascript_include_tag "/js/index.js"
 
     = yield :js
