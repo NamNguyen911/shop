@@ -7,7 +7,7 @@ html
     = csrf_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    link rel="stylesheet" type="text/css" href="/assets/css/index.css"
+    link rel="stylesheet" type="text/css" href="/css/index.css"
     = yield :css
 
   body
@@ -20,7 +20,7 @@ html
               | / YGM.vn
         .column.small-4.medium-4.large-2.small-text-left.medium-text-center
             = link_to root_path, class: 'logo' do
-              img src="/assets/img/logo.svg"
+              img src="/img/logo.svg"
         .column.small-8.medium-4.large-5
           .menu.text-right
             = render 'layouts/cart_text'
@@ -64,12 +64,12 @@ html
       a.menu href="#"
         span.fa.fa-bars
 
-    script src="/assets/bower/jquery/dist/jquery.min.js"
-    script src="/assets/bower/lodash/dist/lodash.min.js"
-    script src="/assets/bower/fastclick/lib/fastclick.js"
-    script src="/assets/bower/foundation/js/foundation.min.js"
-    script src="/assets/bower/owl.carousel/dist/owl.carousel.min.js"
-    script src="/assets/bower/owl.carousel2.thumbs/dist/owl.carousel2.thumbs.min.js"
-    script src="/assets/js/index.js"
+    script src="/bower/jquery/dist/jquery.min.js"
+    script src="/bower/lodash/dist/lodash.min.js"
+    script src="/bower/fastclick/lib/fastclick.js"
+    script src="/bower/foundation/js/foundation.min.js"
+    script src="/bower/owl.carousel/dist/owl.carousel.min.js"
+    script src="/bower/owl.carousel2.thumbs/dist/owl.carousel2.thumbs.min.js"
+    script src="/js/index.js"
 
     = yield :js
