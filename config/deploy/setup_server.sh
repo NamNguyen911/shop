@@ -37,3 +37,5 @@ rbenv rehash
 
 # TODO need to create user ygm and grant permission
 sudo apt-get -y install mysql-server mysql-client libmysqlclient-dev
+
+# TODO need to install image magick

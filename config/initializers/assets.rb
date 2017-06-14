@@ -10,7 +10,7 @@ Rails.application.config.assets.version = '1.0'
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile += %w( 
-  css/index.css
+  index.css
   search.js 
   jquery/dist/jquery.min.js
   lodash/dist/lodash.min.js
@@ -18,4 +18,5 @@ Rails.application.config.assets.precompile += %w(
   foundation/js/foundation.min.js
   owl.carousel/dist/owl.carousel.min.js
   owl.carousel2.thumbs/dist/owl.carousel2.thumbs.min.js
+  index.js
 )
