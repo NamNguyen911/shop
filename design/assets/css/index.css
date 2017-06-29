@@ -1274,6 +1274,8 @@ select {
   margin-bottom: 1.25rem;
   padding: 0.875rem 1.5rem 0.875rem 0.875rem;
   position: relative;
+  -webkit-transition: opacity 300ms ease-out;
+  -o-transition: opacity 300ms ease-out;
   transition: opacity 300ms ease-out;
   background-color: #fec41e;
   border-color: #f3b401;
@@ -1828,6 +1830,8 @@ button, .button {
   background-color: #fec41e;
   border-color: #e2a801;
   color: #FFFFFF;
+  -webkit-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
 }
 
@@ -1956,6 +1960,7 @@ button.disabled, button[disabled], .button.disabled, .button[disabled] {
   background-color: #fec41e;
   border-color: #e2a801;
   color: #FFFFFF;
+  -webkit-box-shadow: none;
   box-shadow: none;
   cursor: default;
   opacity: 0.7;
@@ -1977,6 +1982,7 @@ button.disabled.secondary, button[disabled].secondary, .button.disabled.secondar
   background-color: #e7e7e7;
   border-color: #b9b9b9;
   color: #333333;
+  -webkit-box-shadow: none;
   box-shadow: none;
   cursor: default;
   opacity: 0.7;
@@ -1998,6 +2004,7 @@ button.disabled.success, button[disabled].success, .button.disabled.success, .bu
   background-color: #43AC6A;
   border-color: #368a55;
   color: #FFFFFF;
+  -webkit-box-shadow: none;
   box-shadow: none;
   cursor: default;
   opacity: 0.7;
@@ -2019,6 +2026,7 @@ button.disabled.alert, button[disabled].alert, .button.disabled.alert, .button[d
   background-color: #f04124;
   border-color: #cf2a0e;
   color: #FFFFFF;
+  -webkit-box-shadow: none;
   box-shadow: none;
   cursor: default;
   opacity: 0.7;
@@ -2040,6 +2048,7 @@ button.disabled.warning, button[disabled].warning, .button.disabled.warning, .bu
   background-color: #f08a24;
   border-color: #cf6e0e;
   color: #FFFFFF;
+  -webkit-box-shadow: none;
   box-shadow: none;
   cursor: default;
   opacity: 0.7;
@@ -2061,6 +2070,7 @@ button.disabled.info, button[disabled].info, .button.disabled.info, .button[disa
   background-color: #a0d3e8;
   border-color: #61b6d9;
   color: #333333;
+  -webkit-box-shadow: none;
   box-shadow: none;
   cursor: default;
   opacity: 0.7;
@@ -2905,6 +2915,7 @@ button::-moz-focus-inner {
   }
   .clearing-assembled .clearing-container .carousel > ul li a.th {
     border: none;
+    -webkit-box-shadow: none;
     box-shadow: none;
     display: block;
   }
@@ -3513,6 +3524,7 @@ input:not([type]), input[type="text"], input[type="password"], input[type="date"
   border-style: solid;
   border-width: 0;
   border-color: black;
+  -webkit-box-shadow: none;
   box-shadow: none;
   color: black;
   display: block;
@@ -4430,6 +4442,7 @@ label.error {
 .joyride-expose-wrapper {
   background-color: #FFFFFF;
   border-radius: 3px;
+  -webkit-box-shadow: 0 0 15px #FFFFFF;
   box-shadow: 0 0 15px #FFFFFF;
   position: absolute;
   z-index: 102;
@@ -4902,6 +4915,8 @@ ul.pagination li {
 
 ul.pagination li a, ul.pagination li button {
   border-radius: 3px;
+  -webkit-transition: background-color 300ms ease-out;
+  -o-transition: background-color 300ms ease-out;
   transition: background-color 300ms ease-out;
   background: none;
   color: #999999;
@@ -5308,6 +5323,7 @@ ul.pagination li {
   background-color: #FFFFFF;
   padding: 1.875rem;
   border: solid 1px #666666;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 
@@ -5346,17 +5362,20 @@ ul.pagination li {
 }
 
 .reveal-modal.radius {
+  -webkit-box-shadow: none;
   box-shadow: none;
   border-radius: 3px;
 }
 
 .reveal-modal.round {
+  -webkit-box-shadow: none;
   box-shadow: none;
   border-radius: 1000px;
 }
 
 .reveal-modal.collapse {
   padding: 0;
+  -webkit-box-shadow: none;
   box-shadow: none;
 }
 
@@ -5722,6 +5741,8 @@ ul.pagination li {
   text-indent: 100%;
   width: 4rem;
   height: 2rem;
+  -webkit-transition: left 0.15s ease-out;
+  -o-transition: left 0.15s ease-out;
   transition: left 0.15s ease-out;
 }
 
@@ -5750,6 +5771,7 @@ ul.pagination li {
   -webkit-transition: left 0.15s ease-out;
   -moz-transition: left 0.15s ease-out;
   -o-transition: translate3d(0, 0, 0);
+  -o-transition: left 0.15s ease-out;
   transition: left 0.15s ease-out;
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
@@ -6045,14 +6067,18 @@ table tr td {
 /* Image Thumbnails */
 .th {
   border: solid 4px #FFFFFF;
+  -webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
   display: inline-block;
   line-height: 0;
   max-width: 100%;
+  -webkit-transition: all 200ms ease-out;
+  -o-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
 }
 
 .th:hover, .th:focus {
+  -webkit-box-shadow: 0 0 6px 1px rgba(254, 196, 30, 0.5);
   box-shadow: 0 0 6px 1px rgba(254, 196, 30, 0.5);
 }
 
@@ -6313,11 +6339,13 @@ meta.foundation-mq-topbar {
   margin-top: -8px;
   top: 50%;
   right: 0.9375rem;
+  -webkit-box-shadow: 0 0 0 1px #FFFFFF, 0 7px 0 1px #FFFFFF, 0 14px 0 1px #FFFFFF;
   box-shadow: 0 0 0 1px #FFFFFF, 0 7px 0 1px #FFFFFF, 0 14px 0 1px #FFFFFF;
   width: 16px;
 }
 
 .top-bar .toggle-topbar.menu-icon a span:hover:after {
+  -webkit-box-shadow: 0 0 0 1px "", 0 7px 0 1px "", 0 14px 0 1px "";
   box-shadow: 0 0 0 1px "", 0 7px 0 1px "", 0 14px 0 1px "";
 }
 
@@ -6335,6 +6363,7 @@ meta.foundation-mq-topbar {
 }
 
 .top-bar.expanded .toggle-topbar a span::after {
+  -webkit-box-shadow: 0 0 0 1px #888888, 0 7px 0 1px #888888, 0 14px 0 1px #888888;
   box-shadow: 0 0 0 1px #888888, 0 7px 0 1px #888888, 0 14px 0 1px #888888;
 }
 
@@ -6352,6 +6381,8 @@ meta.foundation-mq-topbar {
   left: 0;
   position: relative;
   width: auto;
+  -webkit-transition: left 300ms ease-out;
+  -o-transition: left 300ms ease-out;
   transition: left 300ms ease-out;
 }
 
@@ -6736,6 +6767,8 @@ meta.foundation-mq-topbar {
     max-width: 62.5rem;
   }
   .top-bar-section {
+    -webkit-transition: none 0 0;
+    -o-transition: none 0 0;
     transition: none 0 0;
     left: 0 !important;
   }
@@ -7407,6 +7440,7 @@ blockquote p {
     background: transparent !important;
     color: #000000 !important;
     /* Black prints faster: h5bp.com/s */
+    -webkit-box-shadow: none !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }
@@ -7476,6 +7510,7 @@ blockquote p {
   -ms-transition: -ms-transform 500ms ease;
   -o-transition: -o-transform 500ms ease;
   transition: -webkit-transform 500ms ease;
+  -o-transition: transform 500ms ease;
   transition: transform 500ms ease;
   transition: transform 500ms ease, -webkit-transform 500ms ease;
 }
@@ -7578,11 +7613,13 @@ blockquote p {
   top: 50%;
   margin-top: -0.5rem;
   left: 0.90625rem;
+  -webkit-box-shadow: 0 0 0 1px #FFFFFF, 0 7px 0 1px #FFFFFF, 0 14px 0 1px #FFFFFF;
   box-shadow: 0 0 0 1px #FFFFFF, 0 7px 0 1px #FFFFFF, 0 14px 0 1px #FFFFFF;
   width: 1rem;
 }
 
 .tab-bar .menu-icon span:hover:after {
+  -webkit-box-shadow: 0 0 0 1px #b3b3b3, 0 7px 0 1px #b3b3b3, 0 14px 0 1px #b3b3b3;
   box-shadow: 0 0 0 1px #b3b3b3, 0 7px 0 1px #b3b3b3, 0 14px 0 1px #b3b3b3;
 }
 
@@ -7590,13 +7627,16 @@ blockquote p {
   -webkit-backface-visibility: hidden;
   background: #333333;
   bottom: 0;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   overflow-x: hidden;
   overflow-y: auto;
   position: absolute;
+  -webkit-transition: -webkit-transform 500ms ease 0s;
   transition: -webkit-transform 500ms ease 0s;
+  -o-transition: transform 500ms ease 0s;
   transition: transform 500ms ease 0s;
   transition: transform 500ms ease 0s, -webkit-transform 500ms ease 0s;
   width: 15.625rem;
@@ -7618,13 +7658,16 @@ blockquote p {
   -webkit-backface-visibility: hidden;
   background: #333333;
   bottom: 0;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   overflow-x: hidden;
   overflow-y: auto;
   position: absolute;
+  -webkit-transition: -webkit-transform 500ms ease 0s;
   transition: -webkit-transform 500ms ease 0s;
+  -o-transition: transform 500ms ease 0s;
   transition: transform 500ms ease 0s;
   transition: transform 500ms ease 0s, -webkit-transform 500ms ease 0s;
   width: 15.625rem;
@@ -7646,13 +7689,16 @@ blockquote p {
   -webkit-backface-visibility: hidden;
   background: #333333;
   bottom: 0;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   overflow-x: hidden;
   overflow-y: auto;
   position: absolute;
+  -webkit-transition: -webkit-transform 500ms ease 0s;
   transition: -webkit-transform 500ms ease 0s;
+  -o-transition: transform 500ms ease 0s;
   transition: transform 500ms ease 0s;
   transition: transform 500ms ease 0s, -webkit-transform 500ms ease 0s;
   width: 15.625rem;
@@ -7675,13 +7721,16 @@ blockquote p {
   -webkit-backface-visibility: hidden;
   background: #333333;
   bottom: 0;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
   overflow-x: hidden;
   overflow-y: auto;
   position: absolute;
+  -webkit-transition: -webkit-transform 500ms ease 0s;
   transition: -webkit-transform 500ms ease 0s;
+  -o-transition: transform 500ms ease 0s;
   transition: transform 500ms ease 0s;
   transition: transform 500ms ease 0s, -webkit-transform 500ms ease 0s;
   width: 15.625rem;
@@ -7724,6 +7773,8 @@ ul.off-canvas-list li a {
   color: rgba(255, 255, 255, 0.7);
   display: block;
   padding: 0.66667rem;
+  -webkit-transition: background 300ms ease;
+  -o-transition: background 300ms ease;
   transition: background 300ms ease;
 }
 
@@ -7745,8 +7796,11 @@ ul.off-canvas-list li a:active {
 
 .move-right .exit-off-canvas {
   -webkit-backface-visibility: hidden;
+  -webkit-box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
   box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  -webkit-transition: background 300ms ease;
+  -o-transition: background 300ms ease;
   transition: background 300ms ease;
   -webkit-tap-highlight-color: transparent;
   background: rgba(255, 255, 255, 0.2);
@@ -7775,8 +7829,11 @@ ul.off-canvas-list li a:active {
 
 .move-left .exit-off-canvas {
   -webkit-backface-visibility: hidden;
+  -webkit-box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
   box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  -webkit-transition: background 300ms ease;
+  -o-transition: background 300ms ease;
   transition: background 300ms ease;
   -webkit-tap-highlight-color: transparent;
   background: rgba(255, 255, 255, 0.2);
@@ -7805,8 +7862,11 @@ ul.off-canvas-list li a:active {
 
 .move-top .exit-off-canvas {
   -webkit-backface-visibility: hidden;
+  -webkit-box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
   box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  -webkit-transition: background 300ms ease;
+  -o-transition: background 300ms ease;
   transition: background 300ms ease;
   -webkit-tap-highlight-color: transparent;
   background: rgba(255, 255, 255, 0.2);
@@ -7835,8 +7895,11 @@ ul.off-canvas-list li a:active {
 
 .move-bottom .exit-off-canvas {
   -webkit-backface-visibility: hidden;
+  -webkit-box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
   box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  -webkit-transition: background 300ms ease;
+  -o-transition: background 300ms ease;
   transition: background 300ms ease;
   -webkit-tap-highlight-color: transparent;
   background: rgba(255, 255, 255, 0.2);
@@ -7867,8 +7930,11 @@ ul.off-canvas-list li a:active {
 
 .offcanvas-overlap .exit-off-canvas {
   -webkit-backface-visibility: hidden;
+  -webkit-box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
   box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  -webkit-transition: background 300ms ease;
+  -o-transition: background 300ms ease;
   transition: background 300ms ease;
   -webkit-tap-highlight-color: transparent;
   background: rgba(255, 255, 255, 0.2);
@@ -7898,8 +7964,11 @@ ul.off-canvas-list li a:active {
 
 .offcanvas-overlap-left .exit-off-canvas {
   -webkit-backface-visibility: hidden;
+  -webkit-box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
   box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  -webkit-transition: background 300ms ease;
+  -o-transition: background 300ms ease;
   transition: background 300ms ease;
   -webkit-tap-highlight-color: transparent;
   background: rgba(255, 255, 255, 0.2);
@@ -7929,8 +7998,11 @@ ul.off-canvas-list li a:active {
 
 .offcanvas-overlap-right .exit-off-canvas {
   -webkit-backface-visibility: hidden;
+  -webkit-box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
   box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  -webkit-transition: background 300ms ease;
+  -o-transition: background 300ms ease;
   transition: background 300ms ease;
   -webkit-tap-highlight-color: transparent;
   background: rgba(255, 255, 255, 0.2);
@@ -7960,8 +8032,11 @@ ul.off-canvas-list li a:active {
 
 .offcanvas-overlap-top .exit-off-canvas {
   -webkit-backface-visibility: hidden;
+  -webkit-box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
   box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  -webkit-transition: background 300ms ease;
+  -o-transition: background 300ms ease;
   transition: background 300ms ease;
   -webkit-tap-highlight-color: transparent;
   background: rgba(255, 255, 255, 0.2);
@@ -7991,8 +8066,11 @@ ul.off-canvas-list li a:active {
 
 .offcanvas-overlap-bottom .exit-off-canvas {
   -webkit-backface-visibility: hidden;
+  -webkit-box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
   box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  -webkit-transition: background 300ms ease;
+  -o-transition: background 300ms ease;
   transition: background 300ms ease;
   -webkit-tap-highlight-color: transparent;
   background: rgba(255, 255, 255, 0.2);
@@ -8048,6 +8126,7 @@ ul.off-canvas-list li a:active {
   -webkit-overflow-scrolling: touch;
   background: #333333;
   bottom: 0;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   margin: 0;
   overflow-x: hidden;
@@ -8068,6 +8147,7 @@ ul.off-canvas-list li a:active {
   -ms-transition: -ms-transform 500ms ease;
   -o-transition: -o-transform 500ms ease;
   transition: -webkit-transform 500ms ease;
+  -o-transition: transform 500ms ease;
   transition: transform 500ms ease;
   transition: transform 500ms ease, -webkit-transform 500ms ease;
 }
@@ -8112,6 +8192,7 @@ ul.off-canvas-list li a:active {
   -webkit-overflow-scrolling: touch;
   background: #333333;
   bottom: 0;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   margin: 0;
   overflow-x: hidden;
@@ -8132,6 +8213,7 @@ ul.off-canvas-list li a:active {
   -ms-transition: -ms-transform 500ms ease;
   -o-transition: -o-transform 500ms ease;
   transition: -webkit-transform 500ms ease;
+  -o-transition: transform 500ms ease;
   transition: transform 500ms ease;
   transition: transform 500ms ease, -webkit-transform 500ms ease;
 }
@@ -8176,6 +8258,7 @@ ul.off-canvas-list li a:active {
   -webkit-overflow-scrolling: touch;
   background: #333333;
   bottom: 0;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   margin: 0;
   overflow-x: hidden;
@@ -8197,6 +8280,7 @@ ul.off-canvas-list li a:active {
   -ms-transition: -ms-transform 500ms ease;
   -o-transition: -o-transform 500ms ease;
   transition: -webkit-transform 500ms ease;
+  -o-transition: transform 500ms ease;
   transition: transform 500ms ease;
   transition: transform 500ms ease, -webkit-transform 500ms ease;
 }
@@ -8235,6 +8319,7 @@ ul.off-canvas-list li a:active {
   -webkit-overflow-scrolling: touch;
   background: #333333;
   bottom: 0;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   margin: 0;
   overflow-x: hidden;
@@ -8256,6 +8341,7 @@ ul.off-canvas-list li a:active {
   -ms-transition: -ms-transform 500ms ease;
   -o-transition: -o-transform 500ms ease;
   transition: -webkit-transform 500ms ease;
+  -o-transition: transform 500ms ease;
   transition: transform 500ms ease;
   transition: transform 500ms ease, -webkit-transform 500ms ease;
 }
@@ -8724,13 +8810,21 @@ label {
   letter-spacing: 0;
 }
 
-label > input[type=text], label input[type=email], label input[type=number], label select, label textarea {
+label input[type=text], label input[type=email], label input[type=number], label input[type=password], label select, label textarea {
   margin-top: 5px;
 }
 
 a {
   color: black;
+  -webkit-transition: color .3s ease-in-out;
+  -o-transition: color .3s ease-in-out;
   transition: color .3s ease-in-out;
+}
+
+a.form-action {
+  font-size: 13px;
+  color: #444444;
+  letter-spacing: 0;
 }
 
 a:hover {
@@ -8745,6 +8839,8 @@ a.ghost-button, button.ghost-button {
   padding: 12px 18px;
   border: 2px solid black;
   color: black;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
   background-color: transparent;
 }
@@ -8779,6 +8875,8 @@ button.submit-to-cart, .button.submit-to-cart {
   font-weight: bold;
   letter-spacing: .1em;
   padding: 14px 18px;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
 
@@ -8886,6 +8984,8 @@ button.submit-to-cart:hover, .button.submit-to-cart:hover {
   letter-spacing: 0;
   background-color: black;
   color: white;
+  -webkit-transition: none;
+  -o-transition: none;
   transition: none;
 }
 
@@ -8935,6 +9035,8 @@ button.submit-to-cart:hover, .button.submit-to-cart:hover {
   color: white;
   position: relative;
   background-color: black;
+  -webkit-transition: background-color .3s ease-in-out;
+  -o-transition: background-color .3s ease-in-out;
   transition: background-color .3s ease-in-out;
 }
 
@@ -9129,6 +9231,8 @@ button.submit-to-cart:hover, .button.submit-to-cart:hover {
   padding: 10px 15px;
   border: 2px solid black;
   color: black;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
 
@@ -9337,6 +9441,8 @@ button.submit-to-cart:hover, .button.submit-to-cart:hover {
   background-color: #f0f0f0;
   display: block;
   padding: 7px 12px;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
 
@@ -9411,6 +9517,8 @@ button.submit-to-cart:hover, .button.submit-to-cart:hover {
 }
 
 #content .product .image img.hover {
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
   opacity: 0;
   -webkit-transform: scale(1);
@@ -9448,6 +9556,8 @@ button.submit-to-cart:hover, .button.submit-to-cart:hover {
 #content .product .actions a {
   display: inline-block;
   color: black;
+  -webkit-transition: color .3s ease-in-out;
+  -o-transition: color .3s ease-in-out;
   transition: color .3s ease-in-out;
   padding: 7px 15px;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -9510,7 +9620,9 @@ button.submit-to-cart:hover, .button.submit-to-cart:hover {
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
+  -webkit-transition: -webkit-transform .3s ease-in-out;
   transition: -webkit-transform .3s ease-in-out;
+  -o-transition: transform .3s ease-in-out;
   transition: transform .3s ease-in-out;
   transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
 }

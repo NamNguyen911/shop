@@ -9,12 +9,16 @@ h1, h2, h3, h4, h5
 
 label
   letter-spacing: 0
-  > input[type=text], input[type=email], input[type=number], select, textarea
+  input[type=text], input[type=email], input[type=number], input[type=password], select, textarea
     margin-top: 5px
 
 a
   color: black
   transition: color .3s ease-in-out
+  &.form-action
+    font-size: 13px
+    color: $tuatara
+    letter-spacing: 0
   &:hover
     color: $primary-color
 

@@ -1,0 +1,35 @@
+extends layout
+
+block breadcrumbs
+  #breadcrumbs
+    .container
+      .row
+        .column
+          nav(role="natigation")
+            ul.breadcrumbs
+              li
+                a(href="/")
+                  span.fa.fa-home
+              li
+                a(href="/login.html") Đăng nhập
+
+block content
+
+  .container.page
+    .row
+      .column.medium-6.small-centered
+        form(action="/orders.html" method="get")
+          h1.title Đăng nhập
+          label Email
+            input#email(type="text" placeholder="email@cua.ban")
+          label Mật khẩu
+            input#password(type="password" placeholder="mật khẩu đăng nhập")
+          .text-left
+            a.form-action(href="#") Quên mật khẩu?
+            br
+            a.form-action(href="#") Liên hệ hỗ trợ
+          .text-right
+            button.ghost-button.actived(type="submit")
+              span.fa.fa-key(style="margin-right: 10px")
+              | Đăng nhập
+
