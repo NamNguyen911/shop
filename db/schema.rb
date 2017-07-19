@@ -28,8 +28,11 @@ ActiveRecord::Schema.define(version: 20170609174416) do
     t.string   "name"
     t.string   "address"
     t.string   "phone_number"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "city"
+    t.string   "email"
+    t.text     "note",         limit: 65535
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

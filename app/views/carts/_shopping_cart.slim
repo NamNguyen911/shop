@@ -37,4 +37,4 @@ table#cart
   tfoot
     tr
       td colspan="5" Tổng đơn hàng
-      td.price 199000
+      td.price = @order_items.inject(0){|sum, order_item| sum += order_item.total_price}

@@ -40,6 +40,7 @@ class Ability
       can :read, Category
       can :read, Product
       can :add, Product
+      can :create, Order
     end
   end
 end

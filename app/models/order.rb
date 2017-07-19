@@ -4,7 +4,7 @@ class Order < ApplicationRecord
     default: :processing, predicates: true
 
   belongs_to :guest
-  has_many :order_items
+  has_many :order_items, dependent: :destroy
 
   before_save :update_subtotal
 
@@ -21,4 +21,5 @@ class Order < ApplicationRecord
   def update_subtotal
     self[:sub_total] = subtotal
   end
+
 end

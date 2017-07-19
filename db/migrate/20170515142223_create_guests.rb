@@ -4,6 +4,9 @@ class CreateGuests < ActiveRecord::Migration[5.0]
       t.string :name
       t.string :address
       t.string :phone_number
+      t.string :city
+      t.string :email
+      t.text :note
 
       t.timestamps
     end

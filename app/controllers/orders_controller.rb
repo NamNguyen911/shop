@@ -14,4 +14,10 @@ class OrdersController < ApplicationController
     end
     redirect_to action: "index"
   end
+
+  private
+
+  def order_params
+    params.require(:order).permit(:name, :address, :city, :phone, :email, :note)
+  end
 end

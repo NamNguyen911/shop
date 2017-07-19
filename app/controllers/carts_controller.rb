@@ -4,16 +4,20 @@ class CartsController < ApplicationController
   end
 
   def checkout
+    @order_items = current_order.order_items
     @guest = Guest.new
   end
 
   def confirm
-    @guest = Guest.new(guest_parameter)
-    @guest.order = current_order
+    @guest = Guest.find_or_initialize_by(email: guest_parameter[:email])
+    @guest.update_attributes(guest_parameter)
+    @guest.orders << current_order
     if @guest.save
       session[:order_id] = nil
       redirect_to thank_you_path
     else
+      @guest = Guest.new
+      @order_items = current_order.order_items
       render :checkout
     end
   end
@@ -22,7 +26,7 @@ class CartsController < ApplicationController
     @order_items = current_order.order_items
     changes = order_items_parameter[:change]
     #@order_items.update(
-    changes.each do |id, quantity| 
+    changes.each do |id, quantity|
       @order_items.where(id: id).update(quantity: quantity)
     end
     render layout: false
@@ -31,7 +35,7 @@ class CartsController < ApplicationController
   private
 
   def guest_parameter
-    params.require(:guest).permit(:name, :address, :phone_number)
+    params.require(:guest).permit(:name, :address, :phone_number, :email, :city, :note)
   end
 
   def order_items_parameter
