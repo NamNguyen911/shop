@@ -16,7 +16,6 @@ class CartsController < ApplicationController
       session[:order_id] = nil
       redirect_to thank_you_path
     else
-      @guest = Guest.new
       @order_items = current_order.order_items
       render :checkout
     end

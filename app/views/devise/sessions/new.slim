@@ -5,6 +5,7 @@
         .listing
           h1.title Đăng nhập 
           = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            - p resource.errors
             .form-inputs
               label
                 | Email

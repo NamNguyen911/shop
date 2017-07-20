@@ -32,20 +32,19 @@
                 h2.block-sub-title Thông tin thanh toán
                 label
                   | Họ và tên
-                  = f.input_field :name, placeholder: "Nhập họ và tên"
-                  = f.error :name
+                  = f.input :name, label: false, placeholder: "Nhập họ và tên"
                 label
                   | Địa chỉ
-                  = f.input_field :address, placeholder:"Địa chỉ liên hệ"
+                  = f.input :address, label: false, placeholder:"Địa chỉ liên hệ"
                 label
                   | Tỉnh/Thành phố
-                  = f.input_field :city, as: :select, collection: Guest.new.city_list
+                  = f.input :city, label: false, as: :select, collection: Guest.new.city_list
                 label
                   | Số điện thoại
-                  = f.input_field :phone_number, placeholder:"Số điện thoại liên hệ"
+                  = f.input :phone_number, label: false,  placeholder:"Số điện thoại liên hệ"
                 label
                   | Email
-                  = f.input_field :email, placeholder:"email@cuaban.com"
+                  = f.input :email, label: false, placeholder:"email@cuaban.com"
                 /label
                   | Ghi chú đơn hàng
                   = f.input_field :note
