@@ -1,0 +1,20 @@
+- content_for :content
+  .container.page
+    .row
+      .column.medium-6.small-centered
+        .listing
+          h1.title Đăng nhập 
+          = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            .form-inputs
+              label
+                | Email
+                = f.input :email, label: false, autofocus: true
+              label
+                | Password
+                = f.input :password, label: false
+              label
+                | Remember me
+                = f.input :remember_me, label: false, as: :boolean if devise_mapping.rememberable?
+            .form-actions
+              = f.button :submit, "Log in", class: "button"
+          = render "devise/shared/links"
