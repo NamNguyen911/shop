@@ -2,10 +2,14 @@
   .container.page
     .row
       .column.medium-6.small-centered
+        = render "layouts/messages.slim"
+    .row
+      .column.medium-6.small-centered
         .listing
           h1.title Đăng nhập 
           = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-            - p resource.errors
+            /- p resource
+            /- p flash
             .form-inputs
               label
                 | Email
