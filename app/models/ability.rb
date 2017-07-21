@@ -35,6 +35,7 @@ class Ability
     elsif user.operator?
       can :read, Category
       can :read, Product
+      can :read, Guest
       can [:fulfill, :read], Order
     else
       can :read, Category

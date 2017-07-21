@@ -1,0 +1,21 @@
+- content_for :content
+  .container.page
+    .row
+      h2 Danh sách khách hàng
+      table
+        thead
+          tr
+            th.text-center Tên
+            th.text-center Địa chỉ
+            th.text-center Tỉnh / Thành phố
+            th.text-center Số điện thoại
+            th.text-center Email
+        tbody
+        - @guests.each do |guest|
+          tr
+            .guest
+              td.name = guest.name
+              td.address = guest.address
+              td.city = guest.city
+              td.phone_number = guest.phone_number
+              td.email = guest.email
