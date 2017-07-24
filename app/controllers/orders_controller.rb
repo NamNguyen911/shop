@@ -2,7 +2,13 @@ class OrdersController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @orders = Order.all
+    status = params[:status] || 'processing'
+    @orders = Order.where(status: status)
+
+    respond_to do |format|
+      format.html
+      format.js { render layout: false }
+    end
   end
 
   def fulfill
@@ -12,7 +18,19 @@ class OrdersController < ApplicationController
         oi.product.update(quantity: oi.product.quantity - oi.quantity)
       end
     end
-    redirect_to action: "index"
+    redirect_to orders_path, format: :js
+  end
+
+  def cancel
+    # need to pass status because both processing and placed order can be cancelled
+    status = @order.status
+    @order.cancel
+    redirect_to orders_path(status: status), format: :js
+  end
+
+  def finish
+    @order.update(status: 'shipped')
+    redirect_to orders_path(status: "placed"), format: :js
   end
 
   private

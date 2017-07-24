@@ -1,34 +1,19 @@
 - content_for :content
   .container.page
     .row
-      h2 Danh sách đơn hàng
-      table
-        thead
-          tr
-            th.text-center ID
-            th.text-center Tên
-            th.text-center Địa chỉ
-            th.text-center Điện thoại
-            th.text-center Tình trạng
-            th.text-center Ngày đặt
-            th.text-center Chi tiết
-            th.text-center Tổng
-        tbody
-        - @orders.each do |o|
-          tr
-            - if o.placed?
-              = link_to "Xử lý đơn hàng", fulfill_order_path(o)
-            td.id = o.id
-            .guest
-              - if o.guest != nil
-                td.name = o.guest.name
-                td.address = o.guest.address
-                td.phone_number = o.guest.phone_number
-            td.status = o.status
-            td.created = o.created_at
-            td.items
-              - o.order_items.each do |oi|
-                .item
-                  p.name #{oi.product.name} (#{oi.size}) x #{oi.quantity}
+      .column
+        h2 Danh sách đơn hàng
 
-            td.total = o.sub_total
+        .order-status
+          ul
+            li
+              = link_to "Chờ xử lý", orders_path(status: "processing"), remote: true
+            li
+              = link_to "Chờ ship", orders_path(status: "placed"), remote: true
+            li
+              = link_to "Đã giao khách", orders_path(status: "shipped"), remote: true
+            li
+              = link_to "Đã hủy", orders_path(status: "cancelled"), remote: true
+
+        #list-orders
+          = render 'list_orders'

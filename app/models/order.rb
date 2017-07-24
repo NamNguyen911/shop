@@ -16,6 +16,20 @@ class Order < ApplicationRecord
     order_items.all? { |oi| oi.quantity <= oi.product.quantity }
   end
 
+  def cancel
+    # only cancel order which is placed? or processing?
+    if self.processing?
+      update(status: :cancelled)
+    elsif self.placed?
+      self.transaction do
+        self.update(status: :cancelled)
+        self.order_items.each do |oi|
+          oi.product.update(quantity: oi.product.quantity - oi.quantity)
+        end
+      end
+    end
+  end
+
   private
 
   def update_subtotal

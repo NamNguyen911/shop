@@ -1,0 +1,45 @@
+table
+  thead
+    tr
+      th.text-center ID
+      th.text-center Thông tin khách hàng
+      th.text-center Sản phẩm
+      th.text-center Ghi chú
+      th.text-center Ngày đặt
+      th.text-center Tổng tiền
+      th.text-center Actions
+  tbody
+    - @orders.each do |o|
+      tr
+        td.id = o.id
+        .guest
+        td
+          ul
+            li
+              p.name = o.guest.try(:name)
+            li
+              p.address = o.guest.try(:address)
+            li
+              p.phone_number = o.guest.try(:phone_number)
+        td.items
+          - o.order_items.each do |oi|
+            .item
+              p.name #{oi.product.name} (#{oi.size}) x #{oi.quantity}
+        td.notes 
+        td.created = o.created_at.strftime("%d/%m/%y")
+        td.total = o.sub_total
+        td
+          - if o.processing?
+            ul
+              li
+                = link_to "Giao đơn hàng này", fulfill_order_path(o), remote: true
+              li
+                = link_to "Chỉnh sửa", "#"
+              li
+                = link_to "Hủy đơn hàng này", cancel_order_path(o), remote: true, data: {confirm: "Bạn có chắc chắc hủy đơn hàng này không?"}
+          - if o.placed?
+              li
+                = link_to "Hoàn thành", finish_order_path(o), remote: true, data: {confirm: "Bạn có chắc chắn hoàn thành đơn hàng không?"}
+              li
+                = link_to "Hủy đơn hàng này", cancel_order_path(o), remote: true, data: {confirm: "Bạn có chắc chắc hủy đơn hàng này không?"}
+

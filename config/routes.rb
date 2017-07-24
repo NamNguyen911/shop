@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   get 'thank_you', to: 'home#thank_you'
 
   resources :orders, only: [:index] do
-    get 'fulfill', on: :member
+    member do
+      get 'fulfill'
+      get 'cancel'
+      get 'finish'
+    end
   end
 
   resources :categories, only: [:show]
